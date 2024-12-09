@@ -1,6 +1,5 @@
-rem ver 2.0.0 beta 1 
-
-chcp 1251
+rem ver 2.0.0 beta 2
+chcp 855
 setlocal enableextensions
 pushd "%~dp0"
 set PATH=%cd%;%PATH%
@@ -12,46 +11,24 @@ cscript //NOLOGO "%temp%\GetAdmin.vbs"
 del /f /q "%temp%\GetAdmin.vbs" >nul 2>&1
 exit
 )
+
+rem ф¦Ёгн ШбЦ¦ЦРй ЅеЁ лсШЦРФЁФ·Ё л хЁ¬Ц гЖб·Ше  г Шб л Т·  ¦Т·Ф·геб еЦб 
 @echo off
 cls
-color 6
-echo [10%]Подгрузка Ninite
-ping localhost -n 3 >nul
-color 9
-echo [30%]Настройка Генератора...
-ping localhost -n 3 >nul
-color b
-echo [50%]Подключаю обновления...
-ping localhost -n 2 >nul
-color d
-echo [70%]Настраеваю программу...
-ping localhost -n 3 >nul
-color 1
-echo [80%]Инжект в UAC, CMD
-title K.E.Y.S (Made by C.C.B) 
-ping localhost -n 4 >nul
-color a
-echo [100%]Завершено!
-echo MsgBox "Made by C.C.B (Cats coding Batch)", , "K.E.Y.S" > CCB.vbs
-cscript //nologo CCB.vbs
-del CCB.vbs
-ping localhost -n 2 >nul
-
-goto start 
-
+goto nb
 :startrun
 color 6
 cls
 
 
-echo [---------------------------------------]
-echo Добро пожаловть, %username%. В ПО Keys 
-echo [---------------------------------------]
-echo Cделано Cats coding Batch
+"%~dp0\nhmb\nhcolor.exe" 0e [---------------------------------------]
+"%~dp0\nhmb\nhcolor.exe" 0e [-----------------KEYS------------------]
+"%~dp0\nhmb\nhcolor.exe" 0e [---------------------------------------]
+echo C¦ЁР ФЦ Cats coding Batch
 echo.
-echo K.E.Y.S - Только для Windows 10-11 
+echo K.E.Y.S - жЦРнЖЦ ¦РЮ Windows 10-11 
 >nul timeout/nobreak 4
-echo Нажмите любую кнопку для перехода в меню
+echo Х йТ·еЁ Рњўзњ ЖФЦШЖз ¦РЮ ШЁбЁµЦ¦  л ТЁФњ
 pause >nul
 :menu
 cls
@@ -66,99 +43,91 @@ echo [-----------------MENU-----------------]
 color 4
 echo [--------------------------------------]
 >nul timeout/nobreak 1
-cls
 
 :menurun
 cls
-echo [--------------------------------------]
-echo [-----------------MENU-----------------]
-echo [--------------------------------------]
->nul timeout/nobreak 1
 color 6
-echo.
-echo 1. Начать генерацию
-echo 2. Поддержать автора
-echo 3. ТГК Cats coding batch
-echo 4. В стартовое меню
-echo 5. Удалить активацию виндовс (ОЧЕНЬ ОПАСНО!)
-echo 6. English Version
-echo 7. Выйти из программы
-echo.
-echo [--------------------------------------]
-echo КЛЮЧ = %KEY%
-echo [--------------------------------------]
-set /p choice=Выбери пункт: 
+echo ЙНННННННННННННННННННННННННННННННННННННННННННННН»
+echo є  MENU                                        є
+echo МНННННННННННННННННННННННННННННННННННННННННННННН№
+echo є1. Х ы ен ¬ЁФЁб ¤·њ                           є
+echo є2. ЭЦ¦¦Ёбй ен  леЦб                           є
+echo є3. ж­З Cats coding batch                      є
+echo є4. м ге беЦлЦЁ ТЁФњ                           є
+echo є5. и¦ Р·ен  Же·л ¤·њ л·Ф¦Цлг (Чь©Хо ЧЭЎдХЧ!)   є
+echo є6. English Version                            є
+echo ИННННННННННННННННННННННННННННННННННННННННННННННј
+echo ЙННННННННННННННННННННННННННННННННННННН»
+echo єЗСќь = %key% є
+echo ИНННННННННННННННННННННННННННННННННННННј
+set /p choice=мсўЁб· ШзФЖе: 
 if %choice%==1 (
+	"%~dp0\nhmb\nhmb.exe" "ЈЦРнх Ю ШбЦгнў ,\nФЁ лсЖРњы ен ШбЦ¬б ТТз лЦ лбЁТЮ ¬ЁФЁб¤·· ЖРњы !\nХ ¦Ёњгн лгЁ ШЦФЮеФЦ " "KEYS" "Information|NoButtons" "10"
     goto gen
 ) else if %choice%==2 (
 	cls
     color a
-	echo Запускаю Бусти
+	echo ф ШзгЖ њ Јзге·
 	ping localhost -n 3 >nul
 	start https://boosty.to/foxinabox
-	echo Возвращение в меню
+	echo мЦулб щЁФ·Ё л ТЁФњ
 	goto menurun
 ) else if %choice%==3 (
 	cls
+	color 1
     start https://t.me/Cats_coding_batch
+	ping localhost -n 3 >nul
+	echo мЦулб щЁФ·Ё л ТЁФњ
 	goto menurun
 ) else if %choice%==4 (
 	cls
-	goto startrun
+	goto start
 ) else if %choice%==5 (
 	color 4
 	cls
 	echo MsgBox "poshalko shto z debil" > CCB.vbs
 	cscript //nologo CCB.vbs
 	del CCB.vbs
-	echo Удаление активации виндовс через 3 секунды...
+	echo и¦ РЁФ·Ё  Же·л ¤·· л·Ф¦Цлг ыЁбЁу 3 гЁЖзФ¦с...
 	>nul timeout/nobreak 1
-	echo Удаление активации виндовс через 2 секунды...
+	echo и¦ РЁФ·Ё  Же·л ¤·· л·Ф¦Цлг ыЁбЁу 2 гЁЖзФ¦с...
 	>nul timeout/nobreak 1
-	echo Удаление активации виндовс через 1 секунды...
+	echo и¦ РЁФ·Ё  Же·л ¤·· л·Ф¦Цлг ыЁбЁу 1 гЁЖзФ¦с...
 	>nul timeout/nobreak 1
-	echo Удаление активации произошло успешно!
+	echo и¦ РЁФ·Ё  Же·л ¤·· ШбЦ·уЦхРЦ згШЁхФЦ!
 	slmgr /upk
 	goto menurun
-) else if %choice%==7 (
-	exit
 ) else if %choice%==6 (
 	start keyse.cmd
-	echo MsgBox "English Version is Made by Random7YT" > CCB.vbs
-	cscript //nologo CCB.vbs
-	del CCB.vbs
 	exit
 ) else (
 	cls
-	color 4
-    echo Error 432, Выбери число из списка кожаный
-	echo Error 432, Выбери число из списка кожаный
-	echo Error 432, Выбери число из списка кожаный
-	echo Error 432, Выбери число из списка кожаный
-	echo Error 432, Выбери число из списка кожаный
-	echo Error 666, Выбери число из списка кожаный
-	echo Error 432, Выбери число из списка кожаный
-	echo Error 432, Выбери число из списка кожаный
-	echo Error 432, Выбери число из списка кожаный
-	echo Error 432, Выбери число из списка кожаный
-	echo ЕЩЕ РАЗ ТАК СДЕЛАЕШЬ МЕШОК КОСТЕЙ, БОЮСЬ ТВОЮ ПРОПАЖУ ОБЪЯСНИТЬ НЕ СМОГУТ!
-	>nul timeout/nobreak 1
-    echo Уничтожение виндовс через
-	>nul timeout/nobreak 1
-	echo 5
-	>nul timeout/nobreak 1
-	echo 4
-	>nul timeout/nobreak 1
-	echo 3
-	>nul timeout/nobreak 1
-	echo 2
-	>nul timeout/nobreak 1
-	echo 1
-	>nul timeout/nobreak 1
-	cscript //nologo rick.vbs
-	exit
+	goto kill
 )
 
+:kill
+color 4
+"%~dp0\nhmb\nhmb.exe" "жс ¦ЦРў Ёў?" "Message Caption" "Error|YesNo" ""
+if "%errorlevel%" == "%IDNO%" goto no
+echo УЦРЦ¦Ё¤, ТЦйЁхн ·¦е·
+ping localhost -n 2 >nul
+goto menurun
+:no
+>nul timeout/nobreak 1
+echo иФ·ыеЦйЁФ·Ё л·Ф¦Цлг ыЁбЁу
+>nul timeout/nobreak 1
+echo 5
+>nul timeout/nobreak 1
+echo 4
+>nul timeout/nobreak 1
+echo 3
+>nul timeout/nobreak 1
+echo 2
+>nul timeout/nobreak 1
+echo 1
+>nul timeout/nobreak 1
+cscript //nologo rick.vbs
+exit
 :gen
 cls
 taskkill /F /IM explorer.exe
@@ -172,7 +141,7 @@ echo.
 echo.
 echo.
 echo.
-echo    Загрузка...        Генерирую ключ
+echo    ф ¬бзуЖ ...        ­ЁФЁб·бзњ ЖРњы
 echo ---------------------------------------
 echo                                 =   0 ]
 echo ---------------------------------------
@@ -186,7 +155,7 @@ echo.
 echo.
 echo.
 echo.
-echo    Загрузка.          Генерирую ключ
+echo    ф ¬бзуЖ .          ­ЁФЁб·бзњ ЖРњы
 echo ---------------------------------------
 echo []                              =   5 ]
 echo ---------------------------------------
@@ -200,7 +169,7 @@ echo.
 echo.
 echo.
 echo.
-echo    Загрузка..         Генерирую ключ
+echo    ф ¬бзуЖ ..         ­ЁФЁб·бзњ ЖРњы
 echo ---------------------------------------
 echo [][]                            =  15 ]
 echo ---------------------------------------
@@ -214,7 +183,7 @@ echo.
 echo.
 echo.
 echo.
-echo    Загрузка...        Генерирую ключ
+echo    ф ¬бзуЖ ...        ­ЁФЁб·бзњ ЖРњы
 echo ---------------------------------------
 echo [][][]                          =  23 ]
 echo ---------------------------------------
@@ -228,7 +197,7 @@ echo.
 echo.
 echo.
 echo.
-echo    Загрузка.          Генерирую ключ
+echo    ф ¬бзуЖ .          ­ЁФЁб·бзњ ЖРњы
 echo ---------------------------------------
 echo [][][][]                        =  30 ]
 echo ---------------------------------------
@@ -242,7 +211,7 @@ echo.
 echo.
 echo.
 echo.
-echo    Загрузка..         Генерирую ключ
+echo    ф ¬бзуЖ ..         ­ЁФЁб·бзњ ЖРњы
 echo ---------------------------------------
 echo [][][][][]                      =  38 ]
 echo ---------------------------------------
@@ -256,7 +225,7 @@ echo.
 echo.
 echo.
 echo.
-echo    Загрузка...        Генерирую ключ
+echo    ф ¬бзуЖ ...        ­ЁФЁб·бзњ ЖРњы
 echo ---------------------------------------
 echo [][][][][]                      =  42 ]
 echo ---------------------------------------
@@ -270,7 +239,7 @@ echo.
 echo.
 echo.
 echo.
-echo    Загрузка.          Генерирую ключ
+echo    ф ¬бзуЖ .          ­ЁФЁб·бзњ ЖРњы
 echo ---------------------------------------
 echo [][][][][][]                    =  45 ]
 echo ---------------------------------------
@@ -284,7 +253,7 @@ echo.
 echo.
 echo.
 echo.
-echo    Загрузка..         Генерирую ключ
+echo    ф ¬бзуЖ ..         ­ЁФЁб·бзњ ЖРњы
 echo ---------------------------------------
 echo [][][][][][][]                  =  48 ]
 echo ---------------------------------------
@@ -299,7 +268,7 @@ echo.
 echo.
 echo.
 slmgr /skms kms.digiboy.ir
-echo    Загрузка...        Генерирую ключ
+echo    ф ¬бзуЖ ...        ­ЁФЁб·бзњ ЖРњы
 echo ---------------------------------------
 echo [][][][][][][][]                =  50 ]
 echo ---------------------------------------
@@ -313,7 +282,7 @@ echo.
 echo.
 echo.
 echo.
-echo    Загрузка.           Генерирую ключ
+echo    ф ¬бзуЖ .           ­ЁФЁб·бзњ ЖРњы
 echo ---------------------------------------
 echo [][][][][][][][][]              =  56 ]
 echo ---------------------------------------
@@ -327,7 +296,7 @@ echo.
 echo.
 echo.
 echo.
-echo    Загрузка..         Генерирую ключ
+echo    ф ¬бзуЖ ..         ­ЁФЁб·бзњ ЖРњы
 echo ---------------------------------------
 echo [][][][][][][][][][]            =  63 ]
 echo ---------------------------------------
@@ -341,7 +310,7 @@ echo.
 echo.
 echo.
 echo.
-echo    Загрузка...        Генерирую ключ
+echo    ф ¬бзуЖ ...        ­ЁФЁб·бзњ ЖРњы
 echo ---------------------------------------
 echo [][][][][][][][][][][]          =  69 ]
 echo ---------------------------------------
@@ -355,7 +324,7 @@ echo.
 echo.
 echo.
 echo.
-echo    Загрузка.          Генерирую ключ
+echo    ф ¬бзуЖ .          ­ЁФЁб·бзњ ЖРњы
 echo ---------------------------------------
 echo [][][][][][][][][][][][]        =  75 ]
 echo ---------------------------------------
@@ -369,7 +338,7 @@ echo.
 echo.
 echo.
 echo.
-echo    Загрузка..         Генерирую ключ
+echo    ф ¬бзуЖ ..         ­ЁФЁб·бзњ ЖРњы
 echo ---------------------------------------
 echo [][][][][][][][][][][][][]      =  79 ]
 echo ---------------------------------------
@@ -385,10 +354,10 @@ echo.
 echo. 
 setlocal
 
-rem Получаем информацию о версии Windows из реестра
+rem ЭЦРзы ЁТ ·ФЄЦбТ ¤·њ Ц лЁбг·· Windows ·у бЁЁгеб 
 for /f "tokens=2*" %%i in ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v ProductName') do set "version=%%j"
 
-rem Проверяем, является ли версия Home или Pro
+rem ЭбЦлЁбЮЁТ, ЮлРЮЁегЮ Р· лЁбг·Ю Home ·Р· Pro
 if /i "%version%"=="Windows 10 Home" (
     set Edition=Home
 	set KEY=7HNRX-D7KGG-3K4RQ-4WPJ4-YTDFH
@@ -403,7 +372,7 @@ if /i "%version%"=="Windows 10 Home" (
 	set KEY=7HNRX-D7KGG-3K4RQ-4WPJ4-YTDFH
 ) else (
     set Edition=Other
-	set KEY=M7XTQ-FN8P6-TTKYV-9D4CC-J462D или KBN8V-HFGQ4-MGXVD-347P6-PDQGT
+	set KEY=M7XTQ-FN8P6-TTKYV-9D4CC-J462D ·Р· KBN8V-HFGQ4-MGXVD-347P6-PDQGT
 )
 
 
@@ -416,7 +385,7 @@ if %Edition%==Pro (
 	slmgr /ipk M7XTQ-FN8P6-TTKYV-9D4CC-J462D
 )
 
-echo    Загрузка...        Генерирую ключ
+echo    ф ¬бзуЖ ...        ­ЁФЁб·бзњ ЖРњы
 echo ---------------------------------------
 echo [][][][][][][][][][][][][][]    =  86 ]
 echo ---------------------------------------
@@ -430,7 +399,7 @@ echo.
 echo.
 echo.
 echo.
-echo    Загрузка.          Генерирую ключ
+echo    ф ¬бзуЖ .          ­ЁФЁб·бзњ ЖРњы
 echo ---------------------------------------
 echo [][][][][][][][][][][][][][][]  =  90 ]
 echo ---------------------------------------
@@ -444,7 +413,7 @@ echo.
 echo.
 echo.
 echo.
-echo    Загрузка..         Генерирую ключ
+echo    ф ¬бзуЖ ..         ­ЁФЁб·бзњ ЖРњы
 echo ---------------------------------------
 echo [][][][][][][][][][][][][][][]  =  96 ]
 echo ---------------------------------------
@@ -458,31 +427,65 @@ echo.
 echo.
 echo.
 echo.
-echo    Загрузка...        .Complete.
+echo    ф ¬бзуЖ ...        .Complete.
 echo ---------------------------------------
 echo [][][][][][][][][][][][][][][][]= 100 ]
 echo ---------------------------------------
 cls
 color a
 start explorer.exe
-echo Успешно
+echo игШЁхФЦ
 echo [--------------------------------------]
-echo ВАШ КЛЮЧ = %KEY%
+echo мЎц ЗСќь = %KEY%
 echo [--------------------------------------]
-echo Ваша версия Windows: %Edition%
+echo м х  лЁбг·Ю Windows: %Edition%
 >nul timeout/nobreak 5
-echo Нажмите любую кнопку для перехода в меню
+echo Х йТ·еЁ Рњўзњ ЖФЦШЖз ¦РЮ ШЁбЁµЦ¦  л ТЁФњ
 pause >nul
 goto menurun
 :start
 cls
-set KEY=Не сделан
-color 6
-echo [---------------------------------------]
+set KEY=xxxxx-xxxxx-xxxxx-xxxxx-xxxxx
+@echo off
 
-echo [----------------K.E.Y.S----------------]
-
-echo [---------------------------------------]
-echo Запуск
-ping localhost -n 2 >nul
 goto startrun
+
+:nb
+setlocal EnableDelayedExpansion
+
+rem Count the number of files in this dir (just as an example)
+set n=0
+for %%f in (*.*) do set /A n+=1
+
+rem Fill "bar" variable with 70 characters
+set "bar="
+for /L %%i in (1,1,70) do set "bar=!bar!X"
+
+rem Fill "space" variable with filler spaces
+set "space="
+for /L %%i in (1,1,110) do set "space=!space!_"
+
+rem "Process" the files and show the progress bar in the title
+set i=0
+echo Processing files:
+for %%f in (*.*) do (
+   set /A i+=1, percent=i*100/n, barLen=70*percent/100
+   for %%a in (!barLen!) do title !percent!%%  !bar:~0,%%a!%space%
+   echo !i!- %%f
+   ping -n 1 localhost > NUL
+)
+rem ЭЦ¦¬бзуЖ  ў·ўР·ЦеЁЖ
+set IDOK=1
+set IDCANCEL=2
+set IDABORT=3
+set IDRETRY=4
+set IDIGNORE=5
+set IDYES=6
+set IDNO=7
+set IDTRYAGAIN=10
+set IDCONTINUE=11
+rem мЦе езе nhmb
+title K.E.Y.S - Made by CCB
+"%~dp0\nhmb\nhmb.exe" "K.E.Y.S Made by CCB\nЈЦРнхЦЁ гШ г·ўЦ у  ·гШЦРнуЦл Ф·Ё!\nф ¬бзуЖ  Ј·ўР·ЦеЁЖ у лЁбхЁФ ! " "KEYS" "Information|NoButtons" "5"
+"%~dp0\nhmb\nhmb.exe" "шжЧ Ј©жЎ м©вдёа, ШЦРФсЅ ЄзФЖ¤·ЦФ Р ТЦйЁе ўсен ФЁ¦ЦгезШЁФ" "KEYS" "Information|NoButtons" "5"
+goto start 

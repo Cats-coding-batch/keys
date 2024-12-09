@@ -13,6 +13,11 @@ exit
 @echo off
 cls
 color 6
+echo MsgBox "English Version is Made by Random7YT", , "Random7YT" > CCB3.vbs
+echo MsgBox "Coding by foxikbox", , "K.E.Y.S" >> CCB3.vbs
+echo MsgBox "Made by C.C.B (Cats coding Batch)", , "K.E.Y.S" >> CCB3.vbs
+cscript //nologo CCB3.vbs
+del CCB3.vbs
 echo [10%]Loading Ninite
 ping localhost -n 3 >nul
 color 9
@@ -30,9 +35,6 @@ title K.E.Y.S (Made by C.C.B)
 ping localhost -n 4 >nul
 color a
 echo [100%]Complete!
-echo MsgBox "Made by C.C.B (Cats coding Batch)", , "K.E.Y.S" > CCB.vbs
-cscript //nologo CCB.vbs
-del CCB.vbs
 ping localhost -n 2 >nul
 
 goto start 
@@ -43,10 +45,9 @@ cls
 
 
 echo [-----------------------------]
-echo Welcome, %username%. in K.E.Y.S 
+echo Welcome in K.E.Y.S, %username%.
 echo [-----------------------------]
 echo Made by Cats coding Batch
-echo Translate by Random7YT
 echo.
 echo K.E.Y.S - Only for Windows 10-11 
 >nul timeout/nobreak 4
