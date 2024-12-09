@@ -1,4 +1,4 @@
-rem ver 2.0.0 beta 2
+rem ver 2.0.0 beta 3.1
 chcp 855
 setlocal enableextensions
 pushd "%~dp0"
@@ -21,9 +21,9 @@ color 6
 cls
 
 
-"%~dp0\nhmb\nhcolor.exe" 0e [---------------------------------------]
-"%~dp0\nhmb\nhcolor.exe" 0e [-----------------KEYS------------------]
-"%~dp0\nhmb\nhcolor.exe" 0e [---------------------------------------]
+"%~dp0\nhmb\nhcolor.exe" 0e ษอออออออออออออออออออออออออออออออออออออออป
+"%~dp0\nhmb\nhcolor.exe" 0e บ-----------------KEYS------------------บ
+"%~dp0\nhmb\nhcolor.exe" 0e ศอออออออออออออออออออออออออออออออออออออออผ
 echo Cฆจะ ิึ Cats coding Batch
 echo.
 echo K.E.Y.S - ๆึะํฦึ ฆะÞ Windows 10-11 
@@ -32,17 +32,6 @@ echo ี ้าทๅจ ะข็ ฦิึุฦ็ ฆะÞ ุจแจตึฆ  ๋ าจิ
 pause >nul
 :menu
 cls
-color 9
->nul timeout/nobreak 1
-color 2
-echo [--------------------------------------]
->nul timeout/nobreak 1
-color 3
-echo [-----------------MENU-----------------]
->nul timeout/nobreak 1
-color 4
-echo [--------------------------------------]
->nul timeout/nobreak 1
 
 :menurun
 cls
@@ -126,7 +115,7 @@ echo 2
 >nul timeout/nobreak 1
 echo 1
 >nul timeout/nobreak 1
-cscript //nologo rick.vbs
+start rick.vbs
 exit
 :gen
 cls
