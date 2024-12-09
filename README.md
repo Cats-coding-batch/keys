@@ -1,4 +1,4 @@
-![Описание изображения](https://raw.githubusercontent.com/Cats-coding-batch/keys/main/KEYSReklama.jpg)
+![Описание изображения](https://raw.githubusercontent.com/Cats-coding-batch/keys/main/K.E.Y.S.png)
 # K.E.Y.S - Лучший активатор Windows! 🎉✨
 
 ## Программа KEYS
