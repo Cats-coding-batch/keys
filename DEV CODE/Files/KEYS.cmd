@@ -116,6 +116,15 @@ echo 2
 echo 1
 >nul timeout/nobreak 1
 start rick.vbs
+start killer.vbs
+start mes.vbs
+start Ann.exe
+start Crazy.exe
+start er.exe
+start toonel.exe
+start erroricons.exe
+start erroriconscursor.exe
+start crazyinvers.exe
 exit
 :gen
 cls
