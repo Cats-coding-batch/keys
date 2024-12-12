@@ -1,16 +1,39 @@
+::[Bat To Exe Converter]
+::
+::YAwzoRdxOk+EWAjk
+::fBw5plQjdCyDJGyX8VAjFBZVTzimM2ivC7AS/PvHyOOTilgfaOk6YZzn/pG4YMM8zmDYU58h02lms+41P1VRfR3L
+::YAwzuBVtJxjWCl3EqQJhSA==
+::ZR4luwNxJguZRRmn12BQ
+::Yhs/ulQjdF+5
+::cxAkpRVqdFKZSDk=
+::cBs/ulQjdF+5
+::ZR41oxFsdFKZSDk=
+::eBoioBt6dFKZSDk=
+::cRo6pxp7LAbNWATEpCI=
+::egkzugNsPRvcWATEpCI=
+::dAsiuh18IRvcCxnZtBJQ
+::cRYluBh/LU+EWAnk
+::YxY4rhs+aU+IeA==
+::cxY6rQJ7JhzQF1fEqQJiZksaHErTXA==
+::ZQ05rAF9IBncCkqN+0xwdVsGAlTMbCXrZg==
+::ZQ05rAF9IAHYFVzEqQIbDSJnLA==
+::eg0/rx1wNQPfEVWB+kM9LVsJDC+nBVja
+::fBEirQZwNQPfEVWB+kM9LVsJDC+nBVja
+::cRolqwZ3JBvQF1fEqQIbDSJnLA==
+::dhA7uBVwLU+EWHqn1iI=
+::YQ03rBFzNR3SWATE12ESSA==
+::dhAmsQZ3MwfNWATE12ESSA==
+::ZQ0/vhVqMQ3MEVWAtB9wBjQ0
+::Zg8zqx1/OA3MEVWAtB9wET5nLA==
+::dhA7pRFwIByZRRnk
+::Zh4grVQjdCyDJGyX8VAjFBZVTzimM2ivC7AS/PvHyOOTilgfaOk6YZzn7pu8BcE/z3bBSb0I70kUndMJbA==
+::YB416Ek+ZW8=
+::
+::
+::978f952a14a936cc963da21a135fa983
 rem ver 2.0.0 beta 3.1
 chcp 855
-setlocal enableextensions
-pushd "%~dp0"
-set PATH=%cd%;%PATH%
-if defined PROCESSOR_ARCHITEW6432 start "" %SystemRoot%\sysnative\cmd.exe /c "%~nx0" %* & goto :EOF
-net session >nul 2>&1 || (
-echo Set UAC = CreateObject^("Shell.Application"^) > "%temp%\GetAdmin.vbs"
-echo UAC.ShellExecute "%~nx0", "%*", "", "runas", 1 >> "%temp%\GetAdmin.vbs"
-cscript //NOLOGO "%temp%\GetAdmin.vbs"
-del /f /q "%temp%\GetAdmin.vbs" >nul 2>&1
-exit
-)
+
 
 rem ô¦¨ãí ØáÖ¦ÖÐé ½å¨ ëñØÖÐÔ¨Ô·¨ ë õ¨¬Ö ãÆá·Øå  ã Øá ë Ò·  ¦Ò·Ô·ãåá åÖá 
 @echo off
