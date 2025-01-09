@@ -1,6 +1,6 @@
 import curses
-import subprocess
-import webbrowser
+import subprocess # type: ignore
+import webbrowser # type: ignore
 from termcolor import colored
 import cursor
 import os
@@ -8,14 +8,13 @@ import os
 cursor.hide()
 os.system("title K.E.Y.S")
 
-# Read the content of the key file
+
 try:
     with open('key.txt', 'r') as file:
         key_content = file.read().strip()
 except FileNotFoundError:
-    key_content = "Файл key.txt не найден. Пожалуйста, убедитесь, что файл существует."
+    key_content = "Кароче или ты файл py открыл или ты прогу и директории украл"
 
-# Paths to command files
 gen_file_path = 'gen.cmd'
 start_file_path = 'start.cmd'
 del_file_path = 'del.cmd'
@@ -27,6 +26,9 @@ def start_generation():
 
 def exit_program():
     curses.endwin()
+    clear_screen()
+    print(colored("програма бомбанула и вылетела :)", 'red'))
+    print(colored("exit code: 0", 'red'))
     os._exit(0)
 
 def clear_screen():
@@ -54,6 +56,7 @@ def links_menu(stdscr):
         stdscr.clear()
         stdscr.addstr(0, 0, "Меню ссылок", curses.A_BOLD)
         stdscr.addstr(2, 0, "Выберите ссылку для открытия:", curses.A_BOLD)
+        stdscr.curs_set(0);
 
         for idx, (row, _) in enumerate(links):
             if idx == current_row:
@@ -70,13 +73,13 @@ def links_menu(stdscr):
         elif key == curses.KEY_DOWN:
             current_row = (current_row + 1) % len(links)
         elif key in (10, 13):  # Enter
-            if current_row == len(links) - 1:  # Назад
-                return  # Go back to the main menu
+            if current_row == len(links) - 1:  #
+                return  
             else:
                 webbrowser.open(links[current_row][1])
                 stdscr.addstr(len(links) + 5, 0, "Ссылка открыта!")
                 stdscr.refresh()
-                stdscr.getch()  # Wait for a key press to continue
+                stdscr.getch()  
 
 def main(stdscr):
     stdscr.clear()
@@ -89,8 +92,8 @@ def main(stdscr):
     menu = [
         ("Начать генерацию", start_generation),
         ("Поддержать автора", support_author),
-        ("Меню ссылок", links_menu),
         ("Удалить активацию виндовс (ОЧЕНЬ ОПАСНО!)", remove_activation),
+        ("Меню ссылок", links_menu),
         ("EXIT", exit_program)
     ]
     
@@ -99,7 +102,7 @@ def main(stdscr):
     while True:
         stdscr.clear()
         stdscr.addstr(0, 0, "Добро пожаловать в меню!", curses.A_BOLD)
-        stdscr.addstr(2, 0, "p .s: Используйте стрелки для навигации и Enter для выбора.", curses.color_pair(2))
+        stdscr.addstr(2, 0, "p.s: Используйте стрелки для навигации и Enter для выбора.", curses.color_pair(2))
         stdscr.addstr(1, 0, f"КЛЮЧ = {key_content}", curses.color_pair(1))
         stdscr.addstr(3, 0, "Выберите опцию:", curses.A_BOLD)
 
@@ -118,10 +121,10 @@ def main(stdscr):
         elif key == curses.KEY_DOWN:
             current_row = (current_row + 1) % len(menu)
         elif key in (10, 13):
-            if current_row == 2:  # Индекс "Меню ссылок"
-                menu[current_row][1](stdscr)  # Вызов links_menu с передачей stdscr
+            if current_row == 3: 
+                menu[current_row][1](stdscr)  
             else:
-                menu[current_row][1]()  # Вызов остальных функций без параметров
+                menu[current_row][1]()  
         else:
             continue
 
