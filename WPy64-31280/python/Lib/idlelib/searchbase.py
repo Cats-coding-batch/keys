@@ -26,7 +26,7 @@ class SearchDialogBase:
     add widgets.
     '''
 
-    title = "Search Dialog"  # replace in subclasses
+    title = "Поиск"  # replace in subclasses
     icon = "Search"
     needwrapbutton = 1  # not in Find in Files
 
@@ -115,7 +115,7 @@ class SearchDialogBase:
 
     def create_entries(self):
         "Create one or more entry lines with make_entry."
-        self.ent = self.make_entry("Find:", self.engine.patvar)[0]
+        self.ent = self.make_entry("Найти:", self.engine.patvar)[0]
 
     def make_frame(self,labeltext=None):
         '''Return (frame, label).
@@ -140,11 +140,11 @@ class SearchDialogBase:
         A gridded frame from make_frame is filled with a Checkbutton
         for each pair, bound to the var, with the corresponding label.
         '''
-        frame = self.make_frame("Options")[0]
+        frame = self.make_frame("Настройка")[0]
         engine = self.engine
-        options = [(engine.revar, "Regular expression"),
-                   (engine.casevar, "Match case"),
-                   (engine.wordvar, "Whole word")]
+        options = [(engine.revar, "Регулярное выражение"),
+                   (engine.casevar, "Учитывать регистр"),
+                   (engine.wordvar, "Целое слово")]
         if self.needwrapbutton:
             options.append((engine.wrapvar, "Wrap around"))
         for var, label in options:
@@ -158,9 +158,9 @@ class SearchDialogBase:
         Others is a list of value, label pairs.
         A gridded frame from make_frame is filled with radio buttons.
         '''
-        frame = self.make_frame("Direction")[0]
+        frame = self.make_frame("Направление")[0]
         var = self.engine.backvar
-        others = [(1, 'Up'), (0, 'Down')]
+        others = [(1, 'Вверх'), (0, 'Вниз')]
         for val, label in others:
             btn = Radiobutton(frame, variable=var, value=val, text=label)
             btn.pack(side="left", fill="both")
@@ -181,7 +181,7 @@ class SearchDialogBase:
         f = self.buttonframe = Frame(self.frame)
         f.grid(row=0,column=2,padx=2,pady=2,ipadx=2,ipady=2)
 
-        b = self.make_button("Close", self.close)
+        b = self.make_button("Закрыть", self.close)
         b.lower()
 
 

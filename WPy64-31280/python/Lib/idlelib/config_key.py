@@ -83,7 +83,7 @@ class GetKeysFrame(Frame):
         self.frame_keyseq_basic.grid(row=0, column=0, sticky='nsew',
                                       padx=5, pady=5)
         basic_title = Label(self.frame_keyseq_basic,
-                            text=f"New keys for '{self.action}' :")
+                            text=f"Новый бинд для '{self.action}' :")
         basic_title.pack(anchor='w')
 
         basic_keys = Label(self.frame_keyseq_basic, justify='left',
@@ -109,12 +109,12 @@ class GetKeysFrame(Frame):
 
         # Basic entry help text.
         help_basic = Label(self.frame_controls_basic, justify='left',
-                           text="Select the desired modifier keys\n"+
-                                "above, and the final key from the\n"+
-                                "list on the right.\n\n" +
-                                "Use upper case Symbols when using\n" +
-                                "the Shift modifier.  (Letters will be\n" +
-                                "converted automatically.)")
+                           text="Выберите желаемые клавиши-модификаторы\n"+
+                                "выше, и конечную клавишу из\n"+
+                                "списка справа.\n\n" +
+                                "Используйте заглавные символы при использовании\n" +
+                                "модификатора Shift. (Буквы будут\n" +
+                                "автоматически преобразованы.)")
         help_basic.grid(row=1, column=0, columnspan=4, padx=2, sticky='w')
 
         # Basic entry key list.
@@ -129,7 +129,7 @@ class GetKeysFrame(Frame):
         self.list_keys_final.config(yscrollcommand=scroll_keys_final.set)
         scroll_keys_final.grid(row=0, column=5, rowspan=4, sticky='ns')
         self.button_clear = Button(self.frame_controls_basic,
-                                   text='Clear Keys',
+                                   text='Очистить Бинд',
                                    command=self.clear_key_seq)
         self.button_clear.grid(row=2, column=0, columnspan=4)
 
@@ -138,8 +138,8 @@ class GetKeysFrame(Frame):
         self.frame_keyseq_advanced.grid(row=0, column=0, sticky='nsew',
                                          padx=5, pady=5)
         advanced_title = Label(self.frame_keyseq_advanced, justify='left',
-                               text=f"Enter new binding(s) for '{self.action}' :\n" +
-                                     "(These bindings will not be checked for validity!)")
+                               text=f"Введите новые Бинды для '{self.action}' :\n" + 
+                                    "(Эти бинды не будут проверяться на корректность!)")
         advanced_title.pack(anchor='w')
         self.advanced_keys = Entry(self.frame_keyseq_advanced,
                                    textvariable=self.key_string)
@@ -149,15 +149,15 @@ class GetKeysFrame(Frame):
         self.frame_help_advanced = Frame(self)
         self.frame_help_advanced.grid(row=1, column=0, sticky='nsew', padx=5)
         help_advanced = Label(self.frame_help_advanced, justify='left',
-            text="Key bindings are specified using Tkinter keysyms as\n"+
-                 "in these samples: <Control-f>, <Shift-F2>, <F12>,\n"
-                 "<Control-space>, <Meta-less>, <Control-Alt-Shift-X>.\n"
-                 "Upper case is used when the Shift modifier is present!\n\n" +
-                 "'Emacs style' multi-keystroke bindings are specified as\n" +
-                 "follows: <Control-x><Control-y>, where the first key\n" +
-                 "is the 'do-nothing' keybinding.\n\n" +
-                 "Multiple separate bindings for one action should be\n"+
-                 "separated by a space, eg., <Alt-v> <Meta-v>." )
+            text="Привязки клавиш указываются с использованием ключевых символов Tkinter, как\n" +
+                "в этих примерах: <Control-f>, <Shift-F2>, <F12>,\n" +
+                "<Control-space>, <Meta-less>, <Control-Alt-Shift-X>.\n" +
+                "Заглавные буквы используются, когда присутствует модификатор Shift!\n\n" +
+                "'Стиль Emacs' многоклавишные привязки указываются следующим образом:\n" +
+                "<Control-x><Control-y>, где первая клавиша\n" +
+                "является привязкой 'ничего не делать'.\n\n" +
+                "Несколько отдельных привязок для одного действия должны быть\n" +
+                "разделены пробелом, например, <Alt-v> <Meta-v>." )
         help_advanced.grid(row=0, column=0, sticky='nsew')
 
         # Switch between basic and advanced.
@@ -182,16 +182,16 @@ class GetKeysFrame(Frame):
 
     def toggle_level(self):
         "Toggle between basic and advanced keys."
-        if  self.button_level.cget('text').startswith('Advanced'):
+        if  self.button_level.cget('text').startswith('Расширенный'):
             self.clear_key_seq()
-            self.button_level.config(text='<< Basic Key Binding Entry')
+            self.button_level.config(text='<< Основной ввод привязки клавиш')
             self.frame_keyseq_advanced.lift()
             self.frame_help_advanced.lift()
             self.advanced_keys.focus_set()
             self.advanced = True
         else:
             self.clear_key_seq()
-            self.button_level.config(text='Advanced Key Binding Entry >>')
+            self.button_level.config(text='Расширенный ввод привязки клавиш >>')
             self.frame_keyseq_basic.lift()
             self.frame_controls_basic.lift()
             self.advanced = False
@@ -227,7 +227,7 @@ class GetKeysFrame(Frame):
         keys = self.key_string.get().strip()
         if not keys:
             self.showerror(title=self.keyerror_title, parent=self,
-                           message="No key specified.")
+                           message="Клавиша не указана.")
             return
         if (self.advanced or self.keys_ok(keys)) and self.bind_ok(keys):
             self.result = keys
@@ -246,19 +246,19 @@ class GetKeysFrame(Frame):
                              for key in keylist]
         if not keys.endswith('>'):
             self.showerror(title, parent=self,
-                           message='Missing the final Key')
+                           message='Отсутствует конечная клавиша')
         elif (not modifiers
               and final_key not in FUNCTION_KEYS + MOVE_KEYS):
             self.showerror(title=title, parent=self,
-                           message='No modifier key(s) specified.')
+                           message='Модификатор(ы) не указаны.')
         elif (modifiers == ['Shift']) \
                  and (final_key not in
                       FUNCTION_KEYS + MOVE_KEYS + ('Tab', 'Space')):
-            msg = 'The shift modifier by itself may not be used with'\
-                  ' this key symbol.'
+            msg = 'Модификатор Shift сам по себе не может быть использован с'\
+                  ' этим символом клавиши.'
             self.showerror(title=title, parent=self, message=msg)
         elif keys in key_sequences:
-            msg = 'This key combination is already in use.'
+            msg = 'Это сочетание клавиш уже используется.'
             self.showerror(title=title, parent=self, message=msg)
         else:
             return True

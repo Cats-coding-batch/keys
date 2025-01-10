@@ -66,7 +66,7 @@ class SearchDialog(SearchDialogBase):
         "Create the base search dialog and add a button for Find Next."
         SearchDialogBase.create_widgets(self)
         # TODO - why is this here and not in a create_command_buttons?
-        self.make_button("Find Next", self.default_command, isdef=True)
+        self.make_button("Найти След.", self.default_command, isdef=True)
 
     def default_command(self, event=None):
         "Handle the Find Next button as the default command."

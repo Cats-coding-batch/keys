@@ -68,7 +68,7 @@ class ConfigDialog(Toplevel):
         if not _utest:
             self.withdraw()
 
-        self.title(title or 'IDLE Preferences')
+        self.title('CIDE Настройки')
         x = parent.winfo_rootx() + 20
         y = parent.winfo_rooty() + (30 if not _htest else 150)
         self.geometry(f'+{x}+{y}')
@@ -121,12 +121,12 @@ class ConfigDialog(Toplevel):
         self.winpage = WinPage(note)
         self.shedpage = ShedPage(note)
 
-        note.add(self.fontpage, text=' Fonts ')
-        note.add(self.highpage, text='Highlights')
-        note.add(self.keyspage, text=' Keys ')
-        note.add(self.winpage, text=' Windows ')
-        note.add(self.shedpage, text=' Shell/Ed ')
-        note.add(self.extpage, text='Extensions')
+        note.add(self.fontpage, text=' Шрифт ')
+        note.add(self.highpage, text='Тема')
+        note.add(self.keyspage, text=' Бинды ')
+        note.add(self.winpage, text=' Окна ')
+        note.add(self.shedpage, text=' Консоль ')
+        note.add(self.extpage, text='Расширения')
         note.enable_traversal()
         note.pack(side=TOP, expand=TRUE, fill=BOTH)
         self.create_action_buttons().pack(side=BOTTOM)
@@ -159,10 +159,10 @@ class ConfigDialog(Toplevel):
         buttons_frame = Frame(outer, padding=2)
         self.buttons = {}
         for txt, cmd in (
-            ('Ok', self.ok),
-            ('Apply', self.apply),
-            ('Cancel', self.cancel),
-            ('Help', self.help)):
+            ('Ок', self.ok),
+            ('Применить', self.apply),
+            ('Галя отмена!', self.cancel),
+            ('Помогите', self.help)):
             self.buttons[txt] = Button(buttons_frame, text=txt, command=cmd,
                        takefocus=FALSE, **padding_args)
             self.buttons[txt].pack(side=LEFT, padx=5)
@@ -330,14 +330,14 @@ class FontPage(Frame):
 
         # Define frames and widgets.
         frame_font = LabelFrame(self, borderwidth=2, relief=GROOVE,
-                                text=' Shell/Editor Font ')
+                                text=' Шрифт Консоли/Редактора ')
         frame_sample = LabelFrame(self, borderwidth=2, relief=GROOVE,
-                                  text=' Font Sample (Editable) ')
+                                  text=' Предпросмотор Шрифта (Можно изменить) ')
         # frame_font.
         frame_font_name = Frame(frame_font)
         frame_font_param = Frame(frame_font)
         font_name_title = Label(
-                frame_font_name, justify=LEFT, text='Font Face :')
+                frame_font_name, justify=LEFT, text='Выбор шрифтов :')
         self.fontlist = Listbox(frame_font_name, height=15,
                                 takefocus=True, exportselection=FALSE)
         self.fontlist.bind('<ButtonRelease-1>', self.on_fontlist_select)
@@ -346,11 +346,11 @@ class FontPage(Frame):
         scroll_font = Scrollbar(frame_font_name)
         scroll_font.config(command=self.fontlist.yview)
         self.fontlist.config(yscrollcommand=scroll_font.set)
-        font_size_title = Label(frame_font_param, text='Size :')
+        font_size_title = Label(frame_font_param, text='Размер :')
         self.sizelist = DynOptionMenu(frame_font_param, self.font_size, None)
         self.bold_toggle = Checkbutton(
                 frame_font_param, variable=self.font_bold,
-                onvalue=1, offvalue=0, text='Bold')
+                onvalue=1, offvalue=0, text='Жирный')
         # frame_sample.
         font_sample_frame = ScrollableTextFrame(frame_sample)
         self.font_sample = font_sample_frame.text
@@ -576,23 +576,23 @@ class HighPage(Frame):
                 (*)theme_message: Label
         """
         self.theme_elements = {
-            # Display-name: internal-config-tag-name.
-            'Normal Code or Text': 'normal',
-            'Code Context': 'context',
-            'Python Keywords': 'keyword',
-            'Python Definitions': 'definition',
-            'Python Builtins': 'builtin',
-            'Python Comments': 'comment',
-            'Python Strings': 'string',
-            'Selected Text': 'hilite',
-            'Found Text': 'hit',
-            'Cursor': 'cursor',
-            'Editor Breakpoint': 'break',
-            'Shell Prompt': 'console',
-            'Error Text': 'error',
-            'Shell User Output': 'stdout',
-            'Shell User Exception': 'stderr',
-            'Line Number': 'linenumber',
+            # Отображаемое имя: внутреннее имя конфигурации.
+            'Обычный код или текст': 'normal',
+            'Контекст кода': 'context',
+            'Ключевые слова Python': 'keyword',
+            'Определения Python': 'definition',
+            'Встроенные функции Python': 'builtin',
+            'Комментарии Python': 'comment',
+            'Строки Python': 'string',
+            'Выделенный текст': 'hilite',
+            'Найденный текст': 'hit',
+            'Курсор': 'cursor',
+            'Точка останова редактора': 'break',
+            'Запрос оболочки': 'console',
+            'Текст ошибки': 'error',
+            'Вывод пользователя оболочки': 'stdout',
+            'Исключение пользователя оболочки': 'stderr',
+            'Номер строки': 'linenumber',
             }
         self.builtin_name = tracers.add(
                 StringVar(self), self.var_changed_builtin_name)
@@ -609,9 +609,9 @@ class HighPage(Frame):
         # Create widgets:
         # body frame and section frames.
         frame_custom = LabelFrame(self, borderwidth=2, relief=GROOVE,
-                                  text=' Custom Highlighting ')
+                                  text=' Кастом ')
         frame_theme = LabelFrame(self, borderwidth=2, relief=GROOVE,
-                                 text=' Highlighting Theme ')
+                                 text=' Темы ')
         # frame_custom.
         sample_frame = ScrollableTextFrame(
                 frame_custom, relief=SOLID, borderwidth=1)
@@ -659,7 +659,7 @@ class HighPage(Frame):
         self.frame_color_set = Frame(frame_custom, style='frame_color_set.TFrame')
         frame_fg_bg_toggle = Frame(frame_custom)
         self.button_set_color = Button(
-                self.frame_color_set, text='Choose Color for :',
+                self.frame_color_set, text='Выберите цвет для :',
                 command=self.get_color)
         self.targetlist = DynOptionMenu(
                 self.frame_color_set, self.highlight_target, None,
@@ -672,22 +672,22 @@ class HighPage(Frame):
                 text='Background', command=self.set_color_sample_binding)
         self.fg_bg_toggle.set(1)
         self.button_save_custom = Button(
-                frame_custom, text='Save as New Custom Theme',
+                frame_custom, text='Сохранить как новую тему',
                 command=self.save_as_new_theme)
         # frame_theme.
-        theme_type_title = Label(frame_theme, text='Select : ')
+        theme_type_title = Label(frame_theme, text='Выбери : ')
         self.builtin_theme_on = Radiobutton(
                 frame_theme, variable=self.theme_source, value=1,
-                command=self.set_theme_type, text='a Built-in Theme')
+                command=self.set_theme_type, text='Темы СIDE')
         self.custom_theme_on = Radiobutton(
                 frame_theme, variable=self.theme_source, value=0,
-                command=self.set_theme_type, text='a Custom Theme')
+                command=self.set_theme_type, text='Темы Кастомные')
         self.builtinlist = DynOptionMenu(
                 frame_theme, self.builtin_name, None, command=None)
         self.customlist = DynOptionMenu(
                 frame_theme, self.custom_name, None, command=None)
         self.button_delete_custom = Button(
-                frame_theme, text='Delete Custom Theme',
+                frame_theme, text='Удалить кастомную тему',
                 command=self.delete_custom)
         self.theme_message = Label(frame_theme, borderwidth=2)
         # Pack widgets:
@@ -747,7 +747,7 @@ class HighPage(Frame):
             item_list.sort()
             if not item_list:
                 self.custom_theme_on.state(('disabled',))
-                self.custom_name.set('- no custom themes -')
+                self.custom_name.set('- нет кастомных тем -')
             else:
                 self.customlist.SetMenu(item_list, item_list[0])
         else:  # User theme selected.
@@ -865,13 +865,13 @@ class HighPage(Frame):
         prev_color = self.style.lookup(self.frame_color_set['style'],
                                        'background')
         rgbTuplet, color_string = colorchooser.askcolor(
-                parent=self, title='Pick new color for : '+target,
+                parent=self, title='Выбери цвет : '+target,
                 initialcolor=prev_color)
         if color_string and (color_string != prev_color):
             # User didn't cancel and they chose a new color.
             if self.theme_source.get():  # Current theme is a built-in.
-                message = ('Your changes will be saved as a new Custom Theme. '
-                           'Enter a name for your new Custom Theme below.')
+                message = ('Ваши изменения будут сохранены как новая кастомная тема. '
+                           'Введите название вашей новой кастомной темы ниже.')
                 new_theme = self.get_new_theme_name(message)
                 if not new_theme:  # User cancelled custom theme creation.
                     return
@@ -1083,9 +1083,9 @@ class HighPage(Frame):
             set_theme_type
         """
         theme_name = self.custom_name.get()
-        delmsg = 'Are you sure you wish to delete the theme %r ?'
+        delmsg = 'Вы точно уверены что хотите удалить тему %r ?'
         if not self.askyesno(
-                'Delete Theme',  delmsg % theme_name, parent=self):
+                'Удалить тему',  delmsg % theme_name, parent=self):
             return
         self.cd.deactivate_current_config()
         # Remove theme from changes, config, and file.
@@ -1095,7 +1095,7 @@ class HighPage(Frame):
         item_list.sort()
         if not item_list:
             self.custom_theme_on.state(('disabled',))
-            self.customlist.SetMenu(item_list, '- no custom themes -')
+            self.customlist.SetMenu(item_list, '- нет кастомных тем -')
         else:
             self.customlist.SetMenu(item_list, item_list[0])
         # Revert to default theme.
@@ -1212,12 +1212,12 @@ class KeysPage(Frame):
         # body and section frames.
         frame_custom = LabelFrame(
                 self, borderwidth=2, relief=GROOVE,
-                text=' Custom Key Bindings ')
+                text=' Кастомные Бинды ')
         frame_key_sets = LabelFrame(
-                self, borderwidth=2, relief=GROOVE, text=' Key Set ')
+                self, borderwidth=2, relief=GROOVE, text=' Выбор Биндов ')
         # frame_custom.
         frame_target = Frame(frame_custom)
-        target_title = Label(frame_target, text='Action - Key(s)')
+        target_title = Label(frame_target, text='Действие - Биндов')
         scroll_target_y = Scrollbar(frame_target)
         scroll_target_x = Scrollbar(frame_target, orient=HORIZONTAL)
         self.bindingslist = Listbox(
@@ -1229,26 +1229,26 @@ class KeysPage(Frame):
         self.bindingslist['yscrollcommand'] = scroll_target_y.set
         self.bindingslist['xscrollcommand'] = scroll_target_x.set
         self.button_new_keys = Button(
-                frame_custom, text='Get New Keys for Selection',
+                frame_custom, text='Создайте новые Бинды для выбора',
                 command=self.get_new_keys, state='disabled')
         # frame_key_sets.
         frames = [Frame(frame_key_sets, padding=2, borderwidth=0)
                   for i in range(2)]
         self.builtin_keyset_on = Radiobutton(
                 frames[0], variable=self.keyset_source, value=1,
-                command=self.set_keys_type, text='Use a Built-in Key Set')
+                command=self.set_keys_type, text='Используйте встроенный набор Биндов')
         self.custom_keyset_on = Radiobutton(
                 frames[0], variable=self.keyset_source, value=0,
-                command=self.set_keys_type, text='Use a Custom Key Set')
+                command=self.set_keys_type, text='Используйте кастомный набор Биндов')
         self.builtinlist = DynOptionMenu(
                 frames[0], self.builtin_name, None, command=None)
         self.customlist = DynOptionMenu(
                 frames[0], self.custom_name, None, command=None)
         self.button_delete_custom_keys = Button(
-                frames[1], text='Delete Custom Key Set',
+                frames[1], text='Удалить кастомный набор Биндов',
                 command=self.delete_custom_keys)
         self.button_save_custom_keys = Button(
-                frames[1], text='Save as New Custom Key Set',
+                frames[1], text='Сохранить как новый кастомный набор Биндов',
                 command=self.save_as_new_key_set)
         self.keys_message = Label(frames[0], borderwidth=2)
 
@@ -1331,7 +1331,7 @@ class KeysPage(Frame):
     def var_changed_custom_name(self, *params):
         "Process selection of custom key set."
         value = self.custom_name.get()
-        if value != '- no custom keys -':
+        if value != '- нет кастомных -':
             changes.add_option('main', 'Keys', 'name', value)
             self.load_keys_list(value)
 
@@ -1390,12 +1390,12 @@ class KeysPage(Frame):
             for event in key_set_changes:
                 current_bindings[event] = key_set_changes[event].split()
         current_key_sequences = list(current_bindings.values())
-        new_keys = GetKeysWindow(self, 'Get New Keys', bind_name,
+        new_keys = GetKeysWindow(self, 'Сделать новый бинд', bind_name,
                 current_key_sequences).result
         if new_keys:
             if self.keyset_source.get():  # Current key set is a built-in.
-                message = ('Your changes will be saved as a new Custom Key Set.'
-                           ' Enter a name for your new Custom Key Set below.')
+                message = ('Ваши изменения будут сохранены как новый набор пользовательских клавиш.'
+                             'Введите имя для вашего нового набора пользовательских клавиш ниже.')
                 new_keyset = self.get_new_keys_name(message)
                 if not new_keyset:  # User cancelled custom key set creation.
                     self.bindingslist.select_set(list_index)
@@ -1417,12 +1417,12 @@ class KeysPage(Frame):
         used_names = (idleConf.GetSectionList('user', 'keys') +
                 idleConf.GetSectionList('default', 'keys'))
         new_keyset = SectionName(
-                self, 'New Custom Key Set', message, used_names).result
+                self, 'Новый пользовательский набор клавиш', message, used_names).result
         return new_keyset
 
     def save_as_new_key_set(self):
         "Prompt for name of new key set and save changes using that name."
-        new_keys_name = self.get_new_keys_name('New Key Set Name:')
+        new_keys_name = self.get_new_keys_name('Новое имя для набора:')
         if new_keys_name:
             self.create_new_key_set(new_keys_name)
 
@@ -1515,9 +1515,9 @@ class KeysPage(Frame):
         deleted from the config file.
         """
         keyset_name = self.custom_name.get()
-        delmsg = 'Are you sure you wish to delete the key set %r ?'
+        delmsg = 'Вы уверены, что хотите удалить набор клавиш %r ?'
         if not self.askyesno(
-                'Delete Key Set',  delmsg % keyset_name, parent=self):
+                'Удалить',  delmsg % keyset_name, parent=self):
             return
         self.cd.deactivate_current_config()
         # Remove key set from changes, config, and file.
@@ -1622,26 +1622,26 @@ class WinPage(Frame):
 
         # Create widgets:
         frame_window = LabelFrame(self, borderwidth=2, relief=GROOVE,
-                                  text=' Window Preferences')
+                                  text=' Настройки Окон')
 
         frame_run = Frame(frame_window, borderwidth=0)
-        startup_title = Label(frame_run, text='At Startup')
+        startup_title = Label(frame_run, text='На запуске')
         self.startup_editor_on = Radiobutton(
                 frame_run, variable=self.startup_edit, value=1,
-                text="Open Edit Window")
+                text="Открыть редактор")
         self.startup_shell_on = Radiobutton(
                 frame_run, variable=self.startup_edit, value=0,
-                text='Open Shell Window')
+                text='Открыть консоль')
 
         frame_win_size = Frame(frame_window, borderwidth=0)
         win_size_title = Label(
-                frame_win_size, text='Initial Window Size  (in characters)')
-        win_width_title = Label(frame_win_size, text='Width')
+                frame_win_size, text='Начальный размер окна)')
+        win_width_title = Label(frame_win_size, text='Ширина')
         self.win_width_int = Entry(
                 frame_win_size, textvariable=self.win_width, width=3,
                 validatecommand=self.digits_only, validate='key',
         )
-        win_height_title = Label(frame_win_size, text='Height')
+        win_height_title = Label(frame_win_size, text='Высота')
         self.win_height_int = Entry(
                 frame_win_size, textvariable=self.win_height, width=3,
                 validatecommand=self.digits_only, validate='key',
@@ -1649,7 +1649,7 @@ class WinPage(Frame):
 
         frame_cursor = Frame(frame_window, borderwidth=0)
         indent_title = Label(frame_cursor,
-                             text='Indent spaces (4 is standard)')
+                             text='Пробелы для отступа (4 — стандарт)')
         try:
             self.indent_chooser = Spinbox(
                     frame_cursor, textvariable=self.indent_spaces,
@@ -1660,33 +1660,33 @@ class WinPage(Frame):
                     frame_cursor, textvariable=self.indent_spaces,
                     state="readonly", values=list(range(1,11)), width=3)
         cursor_blink_title = Label(frame_cursor, text='Cursor Blink')
-        self.cursor_blink_bool = Checkbutton(frame_cursor, text="Cursor blink",
+        self.cursor_blink_bool = Checkbutton(frame_cursor, text="Мигающий курсор",
                                              variable=self.cursor_blink)
 
         frame_autocomplete = Frame(frame_window, borderwidth=0,)
         auto_wait_title = Label(frame_autocomplete,
-                                text='Completions Popup Wait (milliseconds)')
+                                text='Ожидание всплывающего окна завершений (миллисекунды)')
         self.auto_wait_int = Entry(
                 frame_autocomplete, textvariable=self.autocomplete_wait,
                 width=6, validatecommand=self.digits_only, validate='key')
 
         frame_paren1 = Frame(frame_window, borderwidth=0)
-        paren_style_title = Label(frame_paren1, text='Paren Match Style')
+        paren_style_title = Label(frame_paren1, text='Стиль совпадения скобок')
         self.paren_style_type = OptionMenu(
                 frame_paren1, self.paren_style, 'expression',
                 "opener","parens","expression")
         frame_paren2 = Frame(frame_window, borderwidth=0)
         paren_time_title = Label(
-                frame_paren2, text='Time Match Displayed (milliseconds)\n'
-                                  '(0 is until next input)')
+                frame_paren2, text='Время отображения совпадения (миллисекунды)\n'
+                '(0 — до следующего ввода)')
         self.paren_flash_time = Entry(
                 frame_paren2, textvariable=self.flash_delay, width=6,
                 validatecommand=self.digits_only, validate='key')
         self.bell_on = Checkbutton(
-                frame_paren2, text="Bell on Mismatch", variable=self.paren_bell)
+                frame_paren2, text="Звук при несоответствии", variable=self.paren_bell)
         frame_format = Frame(frame_window, borderwidth=0)
         format_width_title = Label(frame_format,
-                                   text='Format Paragraph Max Width')
+                                   text='Максимальная ширина форматирования абзаца')
         self.format_width_int = Entry(
                 frame_format, textvariable=self.format_width, width=4,
                 validatecommand=self.digits_only, validate='key',
@@ -1812,13 +1812,13 @@ class ShedPage(Frame):
 
         # Create widgets:
         frame_shell = LabelFrame(self, borderwidth=2, relief=GROOVE,
-                                 text=' Shell Preferences')
+                                 text=' Настройки консоли')
         frame_editor = LabelFrame(self, borderwidth=2, relief=GROOVE,
-                                  text=' Editor Preferences')
+                                  text=' Настройки редактора')
         # Frame_shell.
         frame_auto_squeeze_min_lines = Frame(frame_shell, borderwidth=0)
         auto_squeeze_min_lines_title = Label(frame_auto_squeeze_min_lines,
-                                             text='Auto-Squeeze Min. Lines:')
+                                             text='Минимальное количество строк авто-сжатия:')
         self.auto_squeeze_min_lines_int = Entry(
                 frame_auto_squeeze_min_lines, width=4,
                 textvariable=self.auto_squeeze_min_lines,
@@ -1826,25 +1826,25 @@ class ShedPage(Frame):
         )
         # Frame_editor.
         frame_save = Frame(frame_editor, borderwidth=0)
-        run_save_title = Label(frame_save, text='At Start of Run (F5)  ')
+        run_save_title = Label(frame_save, text='В начале выполнения (F5)')
 
         self.save_ask_on = Radiobutton(
                 frame_save, variable=self.autosave, value=0,
-                text="Prompt to Save")
+                text="Запросить сохранение")
         self.save_auto_on = Radiobutton(
                 frame_save, variable=self.autosave, value=1,
-                text='No Prompt')
+                text='Делать ровно ничего')
 
         frame_line_numbers_default = Frame(frame_editor, borderwidth=0)
         line_numbers_default_title = Label(
-            frame_line_numbers_default, text='Show line numbers in new windows')
+            frame_line_numbers_default, text='Показывать номера строк в новых окнах')
         self.line_numbers_default_bool = Checkbutton(
                 frame_line_numbers_default,
                 variable=self.line_numbers_default,
                 width=1)
 
         frame_context = Frame(frame_editor, borderwidth=0)
-        context_title = Label(frame_context, text='Max Context Lines :')
+        context_title = Label(frame_context, text='Максимальное количество контекстных строк :')
         self.context_int = Entry(
                 frame_context, textvariable=self.context_lines, width=3,
                 validatecommand=self.digits_only, validate='key',
@@ -1921,9 +1921,9 @@ class ExtPage(Frame):
         self.extension_names = StringVar(self)
 
         frame_ext = LabelFrame(self, borderwidth=2, relief=GROOVE,
-                               text=' Feature Extensions ')
+                               text=' Расширения функций ')
         self.frame_help = HelpFrame(self, borderwidth=2, relief=GROOVE,
-                               text=' Help Menu Extensions ')
+                               text=' Расширения Меню помощи ')
 
         frame_ext.rowconfigure(0, weight=1)
         frame_ext.columnconfigure(2, weight=1)

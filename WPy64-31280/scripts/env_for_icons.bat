@@ -1,8 +1,8 @@
 @echo off
 call "%~dp0env.bat"
-set WINPYWORKDIR=%WINPYDIRBASE%\Notebooks
+set WINPYWORKDIR=%WINPYDIRBASE%\pywork
 
-rem default is as before: Winpython ..\Notebooks
+rem default is as before: Winpython ..\pywork
 set WINPYWORKDIR1=%WINPYWORKDIR%
 
 rem if we have a file or directory in %1 parameter, we use that directory 
@@ -31,9 +31,9 @@ FOR /F "delims=" %%i IN ('""%WINPYDIR%\python.exe" "%~dp0WinpythonIni.py""') DO 
 
 rem 2024-08-18: we go initial directory WINPYWORKDIR if no direction and we are on icon directory
 rem old NSIS launcher is  by default at icon\scripts level
-if  "%__CD__%scripts\"=="%~dp0"  if "%WINPYWORKDIR1%"=="%WINPYDIRBASE%\Notebooks"  cd/D %WINPYWORKDIR1%
+if  "%__CD__%scripts\"=="%~dp0"  if "%WINPYWORKDIR1%"=="%WINPYDIRBASE%\pywork"  cd/D %WINPYWORKDIR1%
 rem new shimmy launcher is by default at icon level
-if  "%__CD__%"=="%~dp0"  if "%WINPYWORKDIR1%"=="%WINPYDIRBASE%\Notebooks"  cd/D %WINPYWORKDIR1%
+if  "%__CD__%"=="%~dp0"  if "%WINPYWORKDIR1%"=="%WINPYDIRBASE%\pywork"  cd/D %WINPYWORKDIR1%
 
 
 rem ******************
@@ -43,5 +43,5 @@ rem ******************
 if not exist "%WINPYWORKDIR%" mkdir "%WINPYWORKDIR%"
 
 if not exist "%HOME%\.spyder-py%WINPYVER:~0,1%"  mkdir "%HOME%\.spyder-py%WINPYVER:~0,1%"
-if not exist "%HOME%\.spyder-py%WINPYVER:~0,1%\workingdir" echo %HOME%\Notebooks>"%HOME%\.spyder-py%WINPYVER:~0,1%\workingdir"
+if not exist "%HOME%\.spyder-py%WINPYVER:~0,1%\workingdir" echo %HOME%\pywork>"%HOME%\.spyder-py%WINPYVER:~0,1%\workingdir"
 

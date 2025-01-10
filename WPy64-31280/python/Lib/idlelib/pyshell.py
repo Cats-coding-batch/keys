@@ -839,7 +839,7 @@ class ModifiedInterpreter(InteractiveInterpreter):
 class PyShell(OutputWindow):
     from idlelib.squeezer import Squeezer
 
-    shell_title = "IDLE Shell " + python_version()
+    shell_title = "CIDE Консоль " + python_version()
 
     # Override classes
     ColorDelegator = ModifiedColorDelegator
@@ -847,12 +847,12 @@ class PyShell(OutputWindow):
 
     # Override menus
     menu_specs = [
-        ("file", "_File"),
-        ("edit", "_Edit"),
-        ("debug", "_Debug"),
-        ("options", "_Options"),
-        ("window", "_Window"),
-        ("help", "_Help"),
+        ("file", "_Файл"),
+        ("edit", "_Редактирование"),
+        ("debug", "_Отладка"),
+        ("options", "_Настройки"),
+        ("window", "_Окна"),
+        ("help", "_Помощь"),
     ]
 
     # Extend right-click context menu
@@ -1132,7 +1132,7 @@ class PyShell(OutputWindow):
         return self.shell_title
 
     COPYRIGHT = \
-          'Type "help", "copyright", "credits" or "license()" for more information.'
+          'Добро пожаловать в CIDE! Это IDE для Python на Русском!'
 
     def begin(self):
         self.text.mark_set("iomark", "insert")

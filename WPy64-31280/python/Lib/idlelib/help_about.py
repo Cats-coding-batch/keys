@@ -42,7 +42,7 @@ class AboutDialog(Toplevel):
         self.create_widgets()
         self.resizable(height=False, width=False)
         self.title(title or
-                   f'About IDLE {pyver} ({bits} bit)')
+                   f'Об CIDE (Mady by CCB) {pyver} ({bits} bit)')
         self.transient(parent)
         self.grab_set()
         self.protocol("WM_DELETE_WINDOW", self.ok)
@@ -62,14 +62,14 @@ class AboutDialog(Toplevel):
         frame_buttons = Frame(self)
         frame_buttons.pack(side=BOTTOM, fill=X)
         frame.pack(side=TOP, expand=True, fill=BOTH)
-        self.button_ok = Button(frame_buttons, text='Close',
+        self.button_ok = Button(frame_buttons, text='Закрыть',
                                 command=self.ok)
         self.button_ok.pack(padx=5, pady=5)
 
         frame_background = Frame(frame, bg=self.bg)
         frame_background.pack(expand=True, fill=BOTH)
 
-        header = Label(frame_background, text='IDLE', fg=self.fg,
+        header = Label(frame_background, text='CIDE', fg=self.fg,
                        bg=self.bg, font=('courier', 24, 'bold'))
         header.grid(row=0, column=0, sticky=E, padx=10, pady=10)
 
@@ -81,22 +81,22 @@ class AboutDialog(Toplevel):
         logo = Label(frame_background, image=self.icon_image, bg=self.bg)
         logo.grid(row=0, column=0, sticky=W, rowspan=2, padx=10, pady=10)
 
-        byline_text = "Python's Integrated Development\nand Learning Environment" + 5*'\n'
+        byline_text = "Спасибо за использование CIDE, Сделал FoxInaBoX" + 5*'\n'
         byline = Label(frame_background, text=byline_text, justify=LEFT,
                        fg=self.fg, bg=self.bg)
         byline.grid(row=2, column=0, sticky=W, columnspan=3, padx=10, pady=5)
 
-        forums_url = "https://discuss.python.org"
-        forums = Label(frame_background, text="Python forums: "+forums_url,
+        forums_url = "https://cats-coding-batch.github.io/CCB/"
+        forums = Label(frame_background, text="Сайт CatsCodingBatch: "+forums_url,
                         justify=LEFT, fg=self.fg, bg=self.bg)
         forums.grid(row=6, column=0, sticky=W, padx=10, pady=0)
         forums.bind("<Button-1>", lambda event: webbrowser.open(forums_url))
         docs_url = ("https://docs.python.org/%d.%d/library/idle.html" %
                     sys.version_info[:2])
-        docs = Label(frame_background, text=docs_url,
-                     justify=LEFT, fg=self.fg, bg=self.bg)
-        docs.grid(row=7, column=0, columnspan=2, sticky=W, padx=10, pady=0)
-        docs.bind("<Button-1>", lambda event: webbrowser.open(docs_url))
+        #docs = Label(frame_background, text=docs_url,
+        #             justify=LEFT, fg=self.fg, bg=self.bg)
+        #docs.grid(row=7, column=0, columnspan=2, sticky=W, padx=10, pady=0)
+        #docs.bind("<Button-1>", lambda event: webbrowser.open(docs_url))
 
         Frame(frame_background, borderwidth=1, relief=SUNKEN,
               height=2, bg=self.bg).grid(row=8, column=0, sticky=EW,
@@ -126,7 +126,7 @@ class AboutDialog(Toplevel):
               height=2, bg=self.bg).grid(row=11, column=0, sticky=EW,
                                          columnspan=3, padx=5, pady=5)
 
-        idle = Label(frame_background, text='IDLE', fg=self.fg, bg=self.bg)
+        idle = Label(frame_background, text='CiDE', fg=self.fg, bg=self.bg)
         idle.grid(row=12, column=0, sticky=W, padx=10, pady=0)
         idle_buttons = Frame(frame_background, bg=self.bg)
         idle_buttons.grid(row=13, column=0, columnspan=3, sticky=NSEW)
@@ -134,11 +134,11 @@ class AboutDialog(Toplevel):
                              highlightbackground=self.bg,
                              command=self.show_readme)
         self.readme.pack(side=LEFT, padx=10, pady=10)
-        self.idle_news = Button(idle_buttons, text='News', width=8,
+        self.idle_news = Button(idle_buttons, text='Новости', width=8,
                                 highlightbackground=self.bg,
                                 command=self.show_idle_news)
         self.idle_news.pack(side=LEFT, padx=10, pady=10)
-        self.idle_credits = Button(idle_buttons, text='Credits', width=8,
+        self.idle_credits = Button(idle_buttons, text='Создатель', width=8,
                                    highlightbackground=self.bg,
                                    command=self.show_idle_credits)
         self.idle_credits.pack(side=LEFT, padx=10, pady=10)
@@ -160,7 +160,7 @@ class AboutDialog(Toplevel):
     # Specify others as ascii until need utf-8, so catch errors.
     def show_idle_credits(self):
         "Handle Idle Credits button event."
-        self.display_file_text('About - Credits', 'CREDITS.txt', 'utf-8')
+        self.display_file_text('Foxikbox', 'CREDITS.txt', 'utf-8')
 
     def show_readme(self):
         "Handle Readme button event."

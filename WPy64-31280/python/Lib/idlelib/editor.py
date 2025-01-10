@@ -468,13 +468,13 @@ class EditorWindow:
     """
 
     menu_specs = [
-        ("file", "_File"),
-        ("edit", "_Edit"),
-        ("format", "F_ormat"),
-        ("run", "_Run"),
-        ("options", "_Options"),
-        ("window", "_Window"),
-        ("help", "_Help"),
+        ("file", "_Файл"),
+        ("edit", "_Редактирование"),
+        ("format", "_Формат"),
+        ("run", "_Запуск"),
+        ("options", "_Настройки"),
+        ("window", "_Окна"),
+        ("help", "_Помощь"),
     ]
 
     def createmenubar(self):
@@ -1053,7 +1053,7 @@ class EditorWindow:
         elif long:
             title = long
         else:
-            title = "untitled"
+            title = "новый"
         icon = short or long or title
         if not self.get_saved():
             title = "*%s*" % title
@@ -1079,7 +1079,7 @@ class EditorWindow:
 
     def short_title(self):
         filename = self.io.filename
-        return os.path.basename(filename) if filename else "untitled"
+        return os.path.basename(filename) if filename else "новый"
 
     def long_title(self):
         return self.io.filename or ""
