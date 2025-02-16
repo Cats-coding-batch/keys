@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "7Yfy8NeUYdk=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\mac\\Documents\\GitHub\\keys\\DEV CODE\\Files\\duse\\nhmb\\foxmsgbox\\foxmsgbox.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\mac\\.nuget\\packages\\microsoft.net.illink.tasks\\9.0.1\\microsoft.net.illink.tasks.9.0.1.nupkg.sha512",
+    "C:\\Users\\mac\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\9.0.1\\microsoft.netcore.app.runtime.win-x64.9.0.1.nupkg.sha512",
+    "C:\\Users\\mac\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\9.0.1\\microsoft.windowsdesktop.app.runtime.win-x64.9.0.1.nupkg.sha512",
+    "C:\\Users\\mac\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\9.0.1\\microsoft.aspnetcore.app.runtime.win-x64.9.0.1.nupkg.sha512",
+    "C:\\Users\\mac\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\9.0.1\\microsoft.netcore.app.host.win-x64.9.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

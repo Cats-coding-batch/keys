@@ -1,0 +1,2 @@
+C:\Users\mac\Documents\GitHub\keys\DEV CODE\Files\duse\nhmb\foxmsgbox\bin\Release\net9.0\win-x64\publish\foxmsgbox.pdb
+C:\Users\mac\Documents\GitHub\keys\DEV CODE\Files\duse\nhmb\foxmsgbox\bin\Release\net9.0\win-x64\publish\foxmsgbox.exe

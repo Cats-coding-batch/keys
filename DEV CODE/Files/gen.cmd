@@ -8,13 +8,15 @@ if not %errorlevel% EQU 0 (
     exit
 )
 cd /d "%~dp0"
-title K.E.Y.S - Генерация
+title KEYS - Генерация
 cls
 color e
+echo.
 echo Загрузка...
 echo.
-echo Погодите...
-slmgr /skms kms.digiboy.ir
+echo.
+echo.
+cscript //I slmgr.vbs /skms kms.digiboy.ir
 for /f "tokens=2*" %%i in ('reg query "HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion" /v ProductName') do set "version=%%j"
 
 rem Проверяем, является ли версия пкирукрывач
@@ -81,22 +83,22 @@ echo Версия: %version%
 echo Издание: %Edition%
 echo Ключ: %KEY2%
 echo.
-slmgr /ipk %KEY2%
+cscript //I slmgr.vbs /ipk %KEY2%
+cscript //I slmgr.vbs /ato
 echo %KEY2% | clip
-echo Информация скопирована в буфер обмена.
-timeout /t 5 >nul
 echo 
 cls
 color a
 echo Успешно
 cd /d "%~dp0"
 echo %KEY2% > "key.txt"
+echo КЛЮЧ скопирован в буфер обмена.
 echo [--------------------------------------]
 echo ВАШ КЛЮЧ = %KEY2%
 echo [--------------------------------------]
 echo Ваша версия Windows: %Edition%
-timeout /t 5 >nul
+>nul timeout/nobreak 1
 echo Нажмите любую кнопку для перехода в меню
 pause >nul
-start start.exe
+start keys.exe -menu
 exit
