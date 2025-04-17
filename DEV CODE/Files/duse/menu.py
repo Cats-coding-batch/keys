@@ -1,15 +1,18 @@
+import requests
 import sys
 import curses
 import subprocess
 import webbrowser
-from termcolor import colored
+from termcolor import colored, cprint
 import cursor
 import os
+import time
 import configparser
-
+import webbrowser
+import keyboard
 cursor.hide()
-os.system("title -=KEYS=-")
-# Настройки по умолчанию
+os.system("title KEYS")
+# default
 DEFAULT_CONFIG = {
     'COLORS': {
         'selected_item': 'MAGENTA',
@@ -17,7 +20,7 @@ DEFAULT_CONFIG = {
     }
 }
 
-# Создаем config.ini если его нет
+#config.ini create
 config = configparser.ConfigParser()
 config_path = 'menuconfig.ini'
 
@@ -28,13 +31,13 @@ if not os.path.exists(config_path):
 else:
     config.read(config_path)
 
-# Получаем настройки цветов
+
 color_settings = {
     'selected_item': config.get('COLORS', 'selected_item', fallback='MAGENTA'),
     'regular_item': config.get('COLORS', 'regular_item', fallback='GREEN')
 }
 
-# Преобразование цветов в константы curses
+#цвет в curses
 COLOR_MAP = {
     'BLACK': curses.COLOR_BLACK,
     'RED': curses.COLOR_RED,
@@ -54,7 +57,7 @@ try:
     with open('key.txt', 'r') as file:
         key_content = file.read().strip()
 except FileNotFoundError:
-    key_content = "Кароче или ты файл py открыл или ты прогу и директории украл"
+    key_content = "[ERROOR] Файл key.txt не был обнаружен"
 
 gen_file_path = 'gen.cmd'
 start_file_path = 'start.cmd'
@@ -74,9 +77,6 @@ def exit_program():
 
 def clear_screen():
     os.system("cls" if os.name == "nt" else "clear")
-
-def support_author():
-    webbrowser.open("https://www.donationalerts.com/r/catscoding")
 
 def remove_activation():
     subprocess.Popen(f'start cmd /k "{del_file_path}"', shell=True)
@@ -182,12 +182,21 @@ def main(stdscr):
 
 def start():
     clear_screen()
-    print(colored("======================================", 'cyan'))
-    print(colored("-----------------KEYS-----------------", 'cyan'))
-    print(colored("======================================", 'cyan'))
-    print(colored("Сделано Cats coding Batch", 'yellow'))
+    print(colored(r" __    __  ________  __      __  ______  ", 'light_blue'))
+    print(colored(r"/  |  /  |/        |/  \    /  |/      \ ", 'blue'))
+    print(colored(r"$$ | /$$/ $$$$$$$$/ $$  \  /$$//$$$$$$  |", 'cyan'))
+    print(colored(r"$$ |/$$/  $$ |__     $$  \/$$/ $$ \__$$/ ", 'magenta'))
+    print(colored(r"$$  $$<   $$    |     $$  $$/  $$      \ ", 'light_magenta'))
+    print(colored(r"$$$$$  \  $$$$$/       $$$$/    $$$$$$  |", 'yellow'))
+    print(colored(r"$$ |$$  \ $$ |_____     $$ |   /  \__$$ |", 'light_yellow'))
+    print(colored(r"$$ | $$  |$$       |    $$ |   $$    $$/ ", 'green'))
+    print(colored(r"$$/   $$/ $$$$$$$$/     $$/     $$$$$$/  ", 'light_green')) 
     print()
-    print(colored("K.E.Y.S - Только для Windows", 'green'))
+    print(colored("Сделано: Cats coding Batch :3", 'yellow'))
+    print()
+    print(colored("KEYS - Только для Windows 10/11/Server", 'green'))
+    print()
+    print(colored("nam nam nam", 'light_magenta'))
     print(colored(f"", 'blue'))
     print(colored("Нажмите любую кнопку для перехода в меню!", 'yellow'))
     os.system("pause>nul")
@@ -199,7 +208,7 @@ if __name__ == "__main__":
         if sys.argv[1] == "-menu":
             curses.wrapper(main)
         elif sys.argv[1] == "-links":
-            curses.wrapper(links_menu)  # Прямой запуск меню ссылок
+            curses.wrapper(links_menu)  #запуск меню ссылок
         else:
             start()
     else:

@@ -9,8 +9,8 @@ if not %errorlevel% EQU 0 (
 cd /d "%~dp0"
 chcp 1251>NULL
 cls
-title KEYS - Bootstart
+title KEYS
 cd Files
 echo Загрузка, погодите) плиз
-start UPDATE.exe
+start KEYS.exe -menu
 exit
